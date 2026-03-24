@@ -66,6 +66,7 @@ export default defineConfig({
         {
           label: '📎 부록',
           items: [
+            { label: '과정중심평가 계획서', slug: 'appendix/assessment-framework' },
             { label: '평가 루브릭', slug: 'appendix/rubric' },
             { label: '예시 답안', slug: 'appendix/sample-answers' },
             { label: '학생 관찰 기록', slug: 'appendix/observation' },
