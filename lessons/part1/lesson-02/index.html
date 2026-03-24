@@ -1,0 +1,550 @@
+<!DOCTYPE html><html lang="ko" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>2차시: 기계가 스스로 학습할 수 있는가? | AI 기초 지도서</title><link rel="canonical" href="https://greatsong.github.io/ai-basic-textbook-teacher/lessons/part1/lesson-02/"/><link rel="sitemap" href="/ai-basic-textbook-teacher/sitemap-index.xml"/><link rel="shortcut icon" href="/ai-basic-textbook-teacher/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v5.18.1"/><meta name="generator" content="Starlight v0.37.7"/><meta property="og:title" content="2차시: 기계가 스스로 학습할 수 있는가?"/><meta property="og:type" content="article"/><meta property="og:url" content="https://greatsong.github.io/ai-basic-textbook-teacher/lessons/part1/lesson-02/"/><meta property="og:locale" content="ko"/><meta property="og:description" content="2차시 교사용 지도서 — 기계가 스스로 학습할 수 있는가?"/><meta property="og:site_name" content="AI 기초 지도서"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="2차시 교사용 지도서 — 기계가 스스로 학습할 수 있는가?"/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/ai-basic-textbook-teacher/_astro/print.DNXP8c50.css" media="print"><link rel="stylesheet" href="/ai-basic-textbook-teacher/_astro/index.BYJYQWGY.css">
+<style>@layer starlight.components{:root{--sl-badge-default-border: var(--sl-color-accent);--sl-badge-default-bg: var(--sl-color-accent-low);--sl-badge-default-text: #fff;--sl-badge-note-border: var(--sl-color-blue);--sl-badge-note-bg: var(--sl-color-blue-low);--sl-badge-note-text: #fff;--sl-badge-danger-border: var(--sl-color-red);--sl-badge-danger-bg: var(--sl-color-red-low);--sl-badge-danger-text: #fff;--sl-badge-success-border: var(--sl-color-green);--sl-badge-success-bg: var(--sl-color-green-low);--sl-badge-success-text: #fff;--sl-badge-caution-border: var(--sl-color-orange);--sl-badge-caution-bg: var(--sl-color-orange-low);--sl-badge-caution-text: #fff;--sl-badge-tip-border: var(--sl-color-purple);--sl-badge-tip-bg: var(--sl-color-purple-low);--sl-badge-tip-text: #fff}[data-theme=light]:root{--sl-badge-default-bg: var(--sl-color-accent-high);--sl-badge-note-bg: var(--sl-color-blue-high);--sl-badge-danger-bg: var(--sl-color-red-high);--sl-badge-success-bg: var(--sl-color-green-high);--sl-badge-caution-bg: var(--sl-color-orange-high);--sl-badge-tip-bg: var(--sl-color-purple-high)}.sl-badge:where(.astro-avdet4wd){display:inline-block;border:1px solid var(--sl-color-border-badge);border-radius:.25rem;font-family:var(--sl-font-system-mono);line-height:normal;color:var(--sl-color-text-badge);background-color:var(--sl-color-bg-badge);overflow-wrap:anywhere}.sidebar-content .sl-badge:where(.astro-avdet4wd){line-height:1;font-size:var(--sl-text-xs);padding:.125rem .375rem}.sidebar-content a[aria-current=page]>.sl-badge:where(.astro-avdet4wd){--sl-color-bg-badge: transparent;--sl-color-border-badge: currentColor;color:inherit}.default:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-default-bg);--sl-color-border-badge: var(--sl-badge-default-border);--sl-color-text-badge: var(--sl-badge-default-text)}.note:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-note-bg);--sl-color-border-badge: var(--sl-badge-note-border);--sl-color-text-badge: var(--sl-badge-note-text)}.danger:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-danger-bg);--sl-color-border-badge: var(--sl-badge-danger-border);--sl-color-text-badge: var(--sl-badge-danger-text)}.success:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-success-bg);--sl-color-border-badge: var(--sl-badge-success-border);--sl-color-text-badge: var(--sl-badge-success-text)}.tip:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-tip-bg);--sl-color-border-badge: var(--sl-badge-tip-border);--sl-color-text-badge: var(--sl-badge-tip-text)}.caution:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-caution-bg);--sl-color-border-badge: var(--sl-badge-caution-border);--sl-color-text-badge: var(--sl-badge-caution-text)}.small:where(.astro-avdet4wd){font-size:var(--sl-text-xs);padding:.125rem .25rem}.medium:where(.astro-avdet4wd){font-size:var(--sl-text-sm);padding:.175rem .35rem}.large:where(.astro-avdet4wd){font-size:var(--sl-text-base);padding:.225rem .45rem}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6) .sl-badge:where(.astro-avdet4wd){vertical-align:middle}}
+@layer starlight.components{.card:where(.astro-v5tidmuc){--sl-card-border: var(--sl-color-purple);--sl-card-bg: var(--sl-color-purple-low);border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-black);padding:clamp(1rem,calc(.125rem + 3vw),2.5rem);flex-direction:column;gap:clamp(.5rem,calc(.125rem + 1vw),1rem)}.card:where(.astro-v5tidmuc):nth-child(4n+1){--sl-card-border: var(--sl-color-orange);--sl-card-bg: var(--sl-color-orange-low)}.card:where(.astro-v5tidmuc):nth-child(4n+3){--sl-card-border: var(--sl-color-green);--sl-card-bg: var(--sl-color-green-low)}.card:where(.astro-v5tidmuc):nth-child(4n+4){--sl-card-border: var(--sl-color-red);--sl-card-bg: var(--sl-color-red-low)}.card:where(.astro-v5tidmuc):nth-child(4n+5){--sl-card-border: var(--sl-color-blue);--sl-card-bg: var(--sl-color-blue-low)}.title:where(.astro-v5tidmuc){font-weight:600;font-size:var(--sl-text-h4);color:var(--sl-color-white);line-height:var(--sl-line-height-headings);gap:1rem;align-items:center}.card:where(.astro-v5tidmuc) .icon:where(.astro-v5tidmuc){border:1px solid var(--sl-card-border);background-color:var(--sl-card-bg);padding:.2em;border-radius:.25rem;flex-shrink:0}.card:where(.astro-v5tidmuc) .body:where(.astro-v5tidmuc){margin:0;font-size:clamp(var(--sl-text-sm),calc(.5rem + 1vw),var(--sl-text-body))}}
+@layer starlight.components{.card-grid:where(.astro-zntqmydn){display:grid;grid-template-columns:100%;gap:1rem}.card-grid:where(.astro-zntqmydn)>*{margin-top:0!important}@media(min-width:50rem){.card-grid:where(.astro-zntqmydn){grid-template-columns:1fr 1fr;gap:1.5rem}.stagger:where(.astro-zntqmydn){--stagger-height: 5rem;padding-bottom:var(--stagger-height)}.stagger:where(.astro-zntqmydn)>*:nth-child(2n){transform:translateY(var(--stagger-height))}}}
+@layer starlight.components{svg:where(.astro-c6vsoqas){color:var(--sl-icon-color);font-size:var(--sl-icon-size, 1em);width:1em;height:1em}}
+@layer starlight.components{.sl-link-card:where(.astro-mf7fz2mj){display:grid;grid-template-columns:1fr auto;gap:.5rem;border:1px solid var(--sl-color-gray-5);border-radius:.5rem;padding:1rem;box-shadow:var(--sl-shadow-sm);position:relative}a:where(.astro-mf7fz2mj){text-decoration:none;line-height:var(--sl-line-height-headings)}a:where(.astro-mf7fz2mj):before{content:"";position:absolute;inset:0}.stack:where(.astro-mf7fz2mj){flex-direction:column;gap:.5rem}.title:where(.astro-mf7fz2mj){color:var(--sl-color-white);font-weight:600;font-size:var(--sl-text-lg)}.description:where(.astro-mf7fz2mj){color:var(--sl-color-gray-3);line-height:1.5}.icon:where(.astro-mf7fz2mj){color:var(--sl-color-gray-3)}.sl-link-card:where(.astro-mf7fz2mj):hover{background:var(--sl-color-gray-7, var(--sl-color-gray-6));border-color:var(--sl-color-gray-2)}.sl-link-card:where(.astro-mf7fz2mj):hover .icon:where(.astro-mf7fz2mj){color:var(--sl-color-white)}}
+@layer starlight.components{.sl-steps{--bullet-size: calc(var(--sl-line-height) * 1rem);--bullet-margin: .375rem;list-style:none;counter-reset:steps-counter var(--sl-steps-start, 0);padding-inline-start:0}.sl-steps>li{counter-increment:steps-counter;position:relative;padding-inline-start:calc(var(--bullet-size) + 1rem);padding-bottom:1px;min-height:calc(var(--bullet-size) + var(--bullet-margin))}.sl-steps>li+li{margin-top:0}.sl-steps>li:before{content:counter(steps-counter);position:absolute;top:0;inset-inline-start:0;width:var(--bullet-size);height:var(--bullet-size);line-height:var(--bullet-size);font-size:var(--sl-text-xs);font-weight:600;text-align:center;color:var(--sl-color-white);background-color:var(--sl-color-gray-6);border-radius:99rem;box-shadow:inset 0 0 0 1px var(--sl-color-gray-5)}.sl-steps>li:after{--guide-width: 1px;content:"";position:absolute;top:calc(var(--bullet-size) + var(--bullet-margin));bottom:var(--bullet-margin);inset-inline-start:calc((var(--bullet-size) - var(--guide-width)) / 2);width:var(--guide-width);background-color:var(--sl-color-hairline-light)}}@layer starlight.content{.sl-steps>li>:first-child{--lh: calc(1em * var(--sl-line-height));--shift-y: calc(.5 * (var(--bullet-size) - var(--lh)));transform:translateY(var(--shift-y));margin-bottom:var(--shift-y)}.sl-steps>li>:first-child:where(h1,h2,h3,h4,h5,h6){--lh: calc(1em * var(--sl-line-height-headings))}@supports (--prop: 1lh){.sl-steps>li>:first-child{--lh: 1lh}}}
+@layer starlight.components{.sl-link-button:where(.astro-xwgiixxa){align-items:center;border:1px solid transparent;border-radius:999rem;display:inline-flex;font-size:var(--sl-text-sm);gap:.5em;line-height:1.1875;outline-offset:.25rem;padding:.4375rem 1.125rem;text-decoration:none}.sl-link-button:where(.astro-xwgiixxa).primary{background:var(--sl-color-text-accent);border-color:var(--sl-color-text-accent);color:var(--sl-color-black)}.sl-link-button:where(.astro-xwgiixxa).primary:hover{color:var(--sl-color-black)}.sl-link-button:where(.astro-xwgiixxa).secondary{border-color:inherit;color:var(--sl-color-white)}.sl-link-button:where(.astro-xwgiixxa).minimal{color:var(--sl-color-white);padding-inline:0}.sl-link-button:where(.astro-xwgiixxa) svg{flex-shrink:0}@media(min-width:50rem){.sl-link-button:where(.astro-xwgiixxa){font-size:var(--sl-text-base);padding:.9375rem 1.25rem}}.sl-markdown-content .sl-link-button:where(.astro-xwgiixxa){margin-inline-end:1rem}.sl-markdown-content .sl-link-button:where(.astro-xwgiixxa):not(:where(p *)){margin-block:1rem}}
+</style><script type="module" src="/ai-basic-textbook-teacher/_astro/page.B1D-nYk3.js"></script></head> <body class="astro-bguv2lll"> <a href="#_top" class="astro-7q3lir66">콘텐츠로 이동</a>  <div class="page sl-flex astro-vrdttmbt"> <header class="header astro-vrdttmbt"><div class="header astro-kmkmnagf"> <div class="title-wrapper sl-flex astro-kmkmnagf"> <a href="/ai-basic-textbook-teacher/" class="site-title sl-flex astro-m46x6ez3">  <span class="astro-m46x6ez3" translate="no"> AI 기초 지도서 </span> </a>  </div> <div class="sl-flex print:hidden astro-kmkmnagf"> <site-search class="astro-kmkmnagf astro-v37mnknz" data-translations="{&#34;placeholder&#34;:&#34;검색&#34;}"> <button data-open-modal disabled aria-label="검색" aria-keyshortcuts="Control+K" class="astro-v37mnknz"> <svg aria-hidden="true" class="astro-v37mnknz astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg> <span class="sl-hidden md:sl-block astro-v37mnknz" aria-hidden="true">검색</span> <kbd class="sl-hidden md:sl-flex astro-v37mnknz" style="display: none;"> <kbd class="astro-v37mnknz">Ctrl</kbd><kbd class="astro-v37mnknz">K</kbd> </kbd> </button> <dialog style="padding:0" aria-label="검색" class="astro-v37mnknz"> <div class="dialog-frame sl-flex astro-v37mnknz">  <button data-close-modal class="sl-flex md:sl-hidden astro-v37mnknz"> 취소 </button> <div class="search-container astro-v37mnknz"> <div id="starlight__search" class="astro-v37mnknz"></div> </div> </div> </dialog> </site-search>  <script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script> <script type="module" src="/ai-basic-textbook-teacher/_astro/Search.astro_astro_type_script_index_0_lang.CtJXzPqH.js"></script>   </div> <div class="sl-hidden md:sl-flex print:hidden right-group astro-kmkmnagf"> <div class="sl-flex social-icons astro-kmkmnagf">  </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">테마 선택</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">어두운 테마</option><option value="light" class="astro-4yphtoen">밝은 테마</option><option value="auto" selected class="astro-4yphtoen">자동</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script> <script type="module">const r="starlight-theme",o=e=>e==="auto"||e==="dark"||e==="light"?e:"auto",c=()=>o(typeof localStorage<"u"&&localStorage.getItem(r));function n(e){typeof localStorage<"u"&&localStorage.setItem(r,e==="light"||e==="dark"?e:"")}const l=()=>matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";function t(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e==="auto"?l():e,n(e)}matchMedia("(prefers-color-scheme: light)").addEventListener("change",()=>{c()==="auto"&&t("auto")});class s extends HTMLElement{constructor(){super(),t(c()),this.querySelector("select")?.addEventListener("change",a=>{a.currentTarget instanceof HTMLSelectElement&&t(o(a.currentTarget.value))})}}customElements.define("starlight-theme-select",s);</script> <script type="module">class s extends HTMLElement{constructor(){super();const e=this.querySelector("select");e&&(e.addEventListener("change",t=>{t.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=t.currentTarget.value)}),window.addEventListener("pageshow",t=>{if(!t.persisted)return;const n=e.querySelector("option[selected]")?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}}customElements.define("starlight-lang-select",s);</script> </div> </div> </header> <nav class="sidebar print:hidden astro-vrdttmbt" aria-label="메인"> <starlight-menu-button class="print:hidden astro-jif73yzw"> <button aria-expanded="false" aria-label="메뉴" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-jif73yzw"> <svg aria-hidden="true" class="open-menu astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg> <svg aria-hidden="true" class="close-menu astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg> </button> </starlight-menu-button> <script type="module">class s extends HTMLElement{constructor(){super(),this.btn=this.querySelector("button"),this.btn.addEventListener("click",()=>this.toggleExpanded());const t=this.closest("nav");t&&t.addEventListener("keyup",e=>this.closeOnEscape(e))}setExpanded(t){this.setAttribute("aria-expanded",String(t)),document.body.toggleAttribute("data-mobile-menu-expanded",t)}toggleExpanded(){this.setExpanded(this.getAttribute("aria-expanded")!=="true")}closeOnEscape(t){t.code==="Escape"&&(this.setExpanded(!1),this.btn.focus())}}customElements.define("starlight-menu-button",s);</script>   <div id="starlight__sidebar" class="sidebar-pane astro-vrdttmbt"> <div class="sidebar-content sl-flex astro-vrdttmbt"> <sl-sidebar-state-persist data-hash="1ikye36" class="astro-kku4brbg"> <script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script>  <ul class="top-level astro-3ii7xxms"> <li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">📋 시작 가이드</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="0"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/guide/how-to-use/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">지도서 사용법</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/guide/preparation/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">수업 전 준비</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Part 1 — AI의 시작</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="1"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part1/lesson-01/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">1차시: 기계가 생각할 수 있는가?</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part1/lesson-02/" aria-current="page" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">2차시: 기계가 스스로 학습할 수 있는가?</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Part 2 — 신경망의 비밀</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="2"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part2/lesson-03/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">3차시: AI의 겨울을 이겨낸 알고리즘의 발견</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part2/lesson-04/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">4차시: &quot;잘 학습됐다&quot;는 것을 어떻게 알 수 있을까?</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Part 3 — 학습의 원리</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="3"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part3/lesson-05/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">5차시: 오차 줄이는 방향으로 나아가는 방법</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part3/lesson-06/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">6차시: 오차를 줄이는 과정을 자동화하려면</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Part 4 — 언어를 이해하는 AI</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="4"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part4/lesson-07/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">7차시: 단어를 숫자로 표현하면 계산할 수 있다</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part4/lesson-08/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">8차시: ChatGPT의 작동 원리, 다음 단어 맞추기</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Part 5 — 확장 모듈</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="5"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part5/lesson-09/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">9차시: 퍼셉트론에서 ChatGPT까지, 인공지능 연구의 역사</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part5/lesson-10/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">10차시: 같은 질문, 다른 깊이</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">📎 부록</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="6"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/appendix/rubric/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">평가 루브릭</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/appendix/sample-answers/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">예시 답안</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/appendix/observation/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">학생 관찰 기록</span>  </a> </li> </ul>  </details> </li> </ul>   <script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script> </sl-sidebar-state-persist>  <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-wu23bvmt"> <div class="social-icons astro-wu23bvmt">  </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">테마 선택</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">어두운 테마</option><option value="light" class="astro-4yphtoen">밝은 테마</option><option value="auto" selected class="astro-4yphtoen">자동</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container print:hidden astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <script type="module" src="/ai-basic-textbook-teacher/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.hwBsy0Mo.js"></script><script type="module" src="/ai-basic-textbook-teacher/_astro/TableOfContents.astro_astro_type_script_index_0_lang.FuRcXuRY.js"></script><div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><span class="toggle sl-flex astro-doynk5tl">목차<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">개요</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#수업-개요" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">수업 개요</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#수업-준비물" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">수업 준비물</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#수업-흐름-50분" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">수업 흐름 (50분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#교사-발화-예시" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">교사 발화 예시</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#도입-00-03분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">도입 (00-03분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#실습1-전-안내-03분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">실습1 전 안내 (03분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#실습1-후-정리-18분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">실습1 후 정리 (18분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#xor-도전-전-33분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">XOR 도전 전 (33분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#xor-좌절-후-40분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">XOR 좌절 후 (40분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#역사-공개-45분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">역사 공개 (45분)</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#시뮬레이터-운영-가이드" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">시뮬레이터 운영 가이드</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#퍼셉트론-시뮬레이터-perceptronsimulator" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">퍼셉트론 시뮬레이터 (PerceptronSimulator)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#퍼셉트론-학습-애니메이션-perceptronlearning" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">퍼셉트론 학습 애니메이션 (PerceptronLearning)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#xor-도전" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">XOR 도전</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#학생-예상-질문--답변" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">학생 예상 질문 &amp; 답변</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#평가-포인트" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">평가 포인트</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#폴백-계획-기술-장애-시-대안-활동" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">폴백 계획 (기술 장애 시 대안 활동)</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#시나리오-a-시뮬레이터-로딩-실패" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">시나리오 A: 시뮬레이터 로딩 실패</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#시나리오-b-일부-pc만-작동" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">시나리오 B: 일부 PC만 작동</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#교사-배경지식" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">교사 배경지식</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#프랭크-로젠블랫-1928-1971" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">프랭크 로젠블랫 (1928-1971)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#민스키와-파퍼트의-perceptrons-1969" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">민스키와 파퍼트의 《Perceptrons》 (1969)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#퍼셉트론-학습-규칙-교사가-알아두면-좋은-수학" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">퍼셉트론 학습 규칙 (교사가 알아두면 좋은 수학)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#xor이-왜-안-되는가-수학적-이유" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">XOR이 왜 안 되는가 (수학적 이유)</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#수준별-지도-방안" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">수준별 지도 방안</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#빠른-학생을-위한-심화-활동" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">빠른 학생을 위한 심화 활동</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#느린-학생을-위한-보조-전략" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">느린 학생을 위한 보조 전략</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#흔한-오개념과-교정" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">흔한 오개념과 교정</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#참고자료" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">참고자료</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#영상-자료" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">영상 자료</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#읽을거리" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">읽을거리</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#차시-연결" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">차시 연결</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#이전-차시-1차시-복습-포인트" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">이전 차시 (1차시) 복습 포인트</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#다음-차시-3차시-예고-포인트" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">다음 차시 (3차시) 예고 포인트</span> </a>  </li> </ul>  </li> </ul> </div></details></nav></mobile-starlight-toc></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">목차</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">개요</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#수업-개요" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">수업 개요</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#수업-준비물" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">수업 준비물</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#수업-흐름-50분" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">수업 흐름 (50분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#교사-발화-예시" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">교사 발화 예시</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#도입-00-03분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">도입 (00-03분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#실습1-전-안내-03분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">실습1 전 안내 (03분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#실습1-후-정리-18분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">실습1 후 정리 (18분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#xor-도전-전-33분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">XOR 도전 전 (33분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#xor-좌절-후-40분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">XOR 좌절 후 (40분)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#역사-공개-45분" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">역사 공개 (45분)</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#시뮬레이터-운영-가이드" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">시뮬레이터 운영 가이드</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#퍼셉트론-시뮬레이터-perceptronsimulator" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">퍼셉트론 시뮬레이터 (PerceptronSimulator)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#퍼셉트론-학습-애니메이션-perceptronlearning" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">퍼셉트론 학습 애니메이션 (PerceptronLearning)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#xor-도전" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">XOR 도전</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#학생-예상-질문--답변" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">학생 예상 질문 &amp; 답변</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#평가-포인트" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">평가 포인트</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#폴백-계획-기술-장애-시-대안-활동" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">폴백 계획 (기술 장애 시 대안 활동)</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#시나리오-a-시뮬레이터-로딩-실패" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">시나리오 A: 시뮬레이터 로딩 실패</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#시나리오-b-일부-pc만-작동" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">시나리오 B: 일부 PC만 작동</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#교사-배경지식" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">교사 배경지식</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#프랭크-로젠블랫-1928-1971" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">프랭크 로젠블랫 (1928-1971)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#민스키와-파퍼트의-perceptrons-1969" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">민스키와 파퍼트의 《Perceptrons》 (1969)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#퍼셉트론-학습-규칙-교사가-알아두면-좋은-수학" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">퍼셉트론 학습 규칙 (교사가 알아두면 좋은 수학)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#xor이-왜-안-되는가-수학적-이유" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">XOR이 왜 안 되는가 (수학적 이유)</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#수준별-지도-방안" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">수준별 지도 방안</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#빠른-학생을-위한-심화-활동" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">빠른 학생을 위한 심화 활동</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#느린-학생을-위한-보조-전략" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">느린 학생을 위한 보조 전략</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#흔한-오개념과-교정" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">흔한 오개념과 교정</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#참고자료" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">참고자료</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#영상-자료" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">영상 자료</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#읽을거리" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">읽을거리</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#차시-연결" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">차시 연결</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#이전-차시-1차시-복습-포인트" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">이전 차시 (1차시) 복습 포인트</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#다음-차시-3차시-예고-포인트" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">다음 차시 (3차시) 예고 포인트</span> </a>  </li> </ul>  </li> </ul> </nav></starlight-toc></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body class="astro-bguv2lll" lang="ko" dir="ltr">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">2차시: 기계가 스스로 학습할 수 있는가?</h1>  </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <div style="background:#e8f4f8; padding:12px 16px; border-radius:8px; margin-bottom:24px;"><p>📘 <a href="/ai-basic-textbook/lessons/part1/lesson-02/">학생용 교과서 바로가기</a></p></div>
+<div class="sl-heading-wrapper level-h2"><h2 id="수업-개요">수업 개요</h2><a class="sl-anchor-link" href="#수업-개요"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “수업 개요”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td><strong>차시</strong></td><td>2차시</td></tr><tr><td><strong>단원</strong></td><td>Part 1 — AI의 시작</td></tr><tr><td><strong>주제</strong></td><td>기계가 스스로 학습할 수 있는가?</td></tr><tr><td><strong>학습 목표</strong></td><td>퍼셉트론의 구조와 동작 원리를 이해할 수 있다.</td></tr><tr><td><strong>핵심 질문</strong></td><td>”직선 하나로 세상의 모든 문제를 풀 수 있을까?”</td></tr><tr><td><strong>평가 연결</strong></td><td>A1 퍼셉트론 구조, A4 활성화함수 역할의 기초</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="수업-준비물">수업 준비물</h2><a class="sl-anchor-link" href="#수업-준비물"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “수업 준비물”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>구분</th><th>항목</th><th>비고</th></tr></thead><tbody><tr><td><strong>필수</strong></td><td>컴퓨터실 (학생 1인 1PC)</td><td>시뮬레이터 웹앱 사용</td></tr><tr><td><strong>필수</strong></td><td>프로젝터 / 대형 디스플레이</td><td>시뮬레이터 시연, 좌표평면 설명용</td></tr><tr><td><strong>필수</strong></td><td>퍼셉트론 시뮬레이터 (AND/OR 모드)</td><td>학생용 교과서 내 탑재</td></tr><tr><td><strong>필수</strong></td><td>퍼셉트론 학습 애니메이션 시뮬레이터</td><td>학습 과정 시각화용</td></tr><tr><td><strong>선택</strong></td><td>타이머 앱</td><td>실습 시간 관리용</td></tr><tr><td><strong>선택</strong></td><td>모눈종이 / 그래프 용지</td><td>손 계산 보조용</td></tr></tbody></table>
+<p><strong>사전 점검 사항:</strong></p>
+<ul>
+<li>시뮬레이터 정상 작동 확인 (AND, OR, XOR 모드 전환)</li>
+<li>학생이 좌표평면 기본 개념을 알고 있는지 확인 (고1 수학 범위)</li>
+</ul>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="수업-흐름-50분">수업 흐름 (50분)</h2><a class="sl-anchor-link" href="#수업-흐름-50분"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “수업 흐름 (50분)”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>시간</th><th>활동</th><th>교사 역할</th><th>핵심 포인트</th></tr></thead><tbody><tr><td>00-03분</td><td>도입 이야기</td><td>흥미 유발, 복선 깔기</td><td>”뉴욕타임스 1면 → 치명적 약점 → AI 겨울”</td></tr><tr><td>03-18분</td><td><strong>실습1: AND/OR 풀기</strong></td><td>시뮬레이터 사용법 안내, 순회 관찰</td><td>직선으로 데이터를 나누는 경험</td></tr><tr><td>18-33분</td><td>이론 설명</td><td>퍼셉트론 구조, 가중치, 편향, 학습 규칙</td><td>”틀리면 고치고, 맞으면 냅둔다”</td></tr><tr><td>33-45분</td><td><strong>실습2: XOR 도전</strong></td><td>좌절 경험 유도, “직선 2개” 버튼 안내</td><td>”직선 하나로 안 되는 문제가 있다!“</td></tr><tr><td>45-50분</td><td>역사 공개</td><td>로젠블랫, NYT 기사, 민스키, AI 겨울</td><td>”해결책은 여러분이 방금 발견했다”</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="교사-발화-예시">교사 발화 예시</h2><a class="sl-anchor-link" href="#교사-발화-예시"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “교사 발화 예시”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="도입-00-03분">도입 (00-03분)</h3><a class="sl-anchor-link" href="#도입-00-03분"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “도입 (00-03분)”</span></a></div>
+<blockquote>
+<p>“어느 날, 한 과학자가 기계를 만들었어요. 이 기계는 데이터를 보여주면 스스로 패턴을 배웠습니다. 뉴욕타임스 1면에 실렸고, 전 세계가 흥분했죠.”</p>
+</blockquote>
+<blockquote>
+<p>“그런데 얼마 뒤, 다른 과학자 두 명이 책 한 권을 써서 이 기계의 치명적 약점을 밝혀냈어요. 그 뒤로 아무도 이 연구에 돈을 대지 않았습니다.”</p>
+</blockquote>
+<blockquote>
+<p>“오늘 여러분이 직접 그 약점을 발견하게 됩니다.”</p>
+</blockquote>
+<div class="sl-heading-wrapper level-h3"><h3 id="실습1-전-안내-03분">실습1 전 안내 (03분)</h3><a class="sl-anchor-link" href="#실습1-전-안내-03분"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “실습1 전 안내 (03분)”</span></a></div>
+<blockquote>
+<p>“화면에 빨간 점과 파란 점이 보이죠? 여러분의 임무는 직선 하나를 그어서 빨간 점과 파란 점을 나누는 거예요. 슬라이더를 움직여보세요.”</p>
+</blockquote>
+<div class="sl-heading-wrapper level-h3"><h3 id="실습1-후-정리-18분">실습1 후 정리 (18분)</h3><a class="sl-anchor-link" href="#실습1-후-정리-18분"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “실습1 후 정리 (18분)”</span></a></div>
+<blockquote>
+<p>“AND도 됐고, OR도 됐죠? 직선 하나로 충분했어요. 생각보다 쉬웠을 거예요.”</p>
+</blockquote>
+<blockquote>
+<p>“그런데 이걸 기계가 자동으로 하는 방법이 있습니다. 규칙은 단순해요 — ‘틀리면 고치고, 맞으면 냅둔다.’ 이것만 반복하면 기계가 스스로 직선을 찾아갑니다.”</p>
+</blockquote>
+<div class="sl-heading-wrapper level-h3"><h3 id="xor-도전-전-33분">XOR 도전 전 (33분)</h3><a class="sl-anchor-link" href="#xor-도전-전-33분"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “XOR 도전 전 (33분)”</span></a></div>
+<blockquote>
+<p>“자, 이번에는 새로운 데이터가 나옵니다. 같은 방식으로 직선을 그어서 나눠보세요.”</p>
+</blockquote>
+<p>(학생들이 XOR을 시도하는 동안 2~3분 순회 관찰)</p>
+<blockquote>
+<p>“어때요? 안 되죠? 직선을 어디에 놓아도 하나는 틀리게 돼요.”</p>
+</blockquote>
+<div class="sl-heading-wrapper level-h3"><h3 id="xor-좌절-후-40분">XOR 좌절 후 (40분)</h3><a class="sl-anchor-link" href="#xor-좌절-후-40분"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “XOR 좌절 후 (40분)”</span></a></div>
+<blockquote>
+<p>“직선 하나로는 불가능합니다. 이건 증명된 거예요. 그런데 여기 ‘직선 2개’ 버튼이 있어요. 눌러보세요.”</p>
+</blockquote>
+<p>(학생들이 직선 2개로 XOR을 풀어보게 함)</p>
+<blockquote>
+<p>“됐죠? ‘직선을 여러 개 쓰면 된다’ — 이 아이디어가 핵심이에요. 하지만 이걸 실제로 구현하는 데 20년이 걸렸습니다.”</p>
+</blockquote>
+<div class="sl-heading-wrapper level-h3"><h3 id="역사-공개-45분">역사 공개 (45분)</h3><a class="sl-anchor-link" href="#역사-공개-45분"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “역사 공개 (45분)”</span></a></div>
+<blockquote>
+<p>“방금 여러분이 발견한 것. 이걸 수학적으로 증명한 사람들이 있어요. 1969년, 민스키와 파퍼트. 이 책 한 권이 AI 연구를 거의 20년간 얼어붙게 만들었어요.”</p>
+</blockquote>
+<blockquote>
+<p>“그리고 여러분이 방금 ‘직선 2개 쓰면 되잖아?‘라고 한 그 아이디어 — 그게 결국 해결책이었어요. 다음 시간에 이 아이디어를 실현시킨 사람을 만납니다.”</p>
+</blockquote>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="시뮬레이터-운영-가이드">시뮬레이터 운영 가이드</h2><a class="sl-anchor-link" href="#시뮬레이터-운영-가이드"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “시뮬레이터 운영 가이드”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="퍼셉트론-시뮬레이터-perceptronsimulator">퍼셉트론 시뮬레이터 (PerceptronSimulator)</h3><a class="sl-anchor-link" href="#퍼셉트론-시뮬레이터-perceptronsimulator"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “퍼셉트론 시뮬레이터 (PerceptronSimulator)”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td><strong>사용 시점</strong></td><td>실습1 (03-18분)</td></tr><tr><td><strong>예상 소요 시간</strong></td><td>AND 5분 + OR 5분 + 탐색 5분 = 약 15분</td></tr><tr><td><strong>조작법</strong></td><td>w1, w2, b 슬라이더 조절 → 직선이 실시간 이동</td></tr><tr><td><strong>성공 기준</strong></td><td>4/4 정확도 달성 시 자동 표시</td></tr></tbody></table>
+<p><strong>운영 팁:</strong></p>
+<ul>
+<li>AND 모드 먼저, OR 모드 다음 순서로 안내하세요</li>
+<li>“직선의 방정식 w1x1 + w2x2 + b = 0”이 화면에 표시되지만, 수식보다 직관에 집중하도록 유도</li>
+<li>빨리 끝낸 학생에게는 “w1만 0으로 고정하면 어떻게 되는지” 탐색하게 하세요</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="퍼셉트론-학습-애니메이션-perceptronlearning">퍼셉트론 학습 애니메이션 (PerceptronLearning)</h3><a class="sl-anchor-link" href="#퍼셉트론-학습-애니메이션-perceptronlearning"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “퍼셉트론 학습 애니메이션 (PerceptronLearning)”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td><strong>사용 시점</strong></td><td>이론 설명 (18-33분) 중 데모</td></tr><tr><td><strong>예상 소요 시간</strong></td><td>교사 시연 5분 + 학생 체험 5분 = 약 10분</td></tr><tr><td><strong>기능</strong></td><td>”학습 시작” 누르면 직선이 스텝마다 자동 이동</td></tr><tr><td><strong>해설 패널</strong></td><td>매 스텝마다 가중치 변화 이유를 수식과 함께 표시</td></tr></tbody></table>
+<p><strong>운영 팁:</strong></p>
+<ul>
+<li>속도를 “느림”으로 설정하고 교사가 먼저 시연하세요</li>
+<li>해설 패널의 “왜 이 가중치가 바뀌었는가”를 학생에게 읽어보게 하면 효과적</li>
+<li>AND와 OR 모두 보여준 후, 학생이 직접 해보게 하세요</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="xor-도전">XOR 도전</h3><a class="sl-anchor-link" href="#xor-도전"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “XOR 도전”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td><strong>사용 시점</strong></td><td>실습2 (33-45분)</td></tr><tr><td><strong>예상 소요 시간</strong></td><td>좌절 체험 5분 + 직선 2개 체험 5분 + 토의 2분 = 약 12분</td></tr><tr><td><strong>핵심 경험</strong></td><td>”아까는 됐는데 왜 이건 안 되지?” → 좌절 = 핵심 발견</td></tr></tbody></table>
+<p><strong>운영 팁:</strong></p>
+<ul>
+<li>XOR이 안 되는 이유를 학생이 스스로 느끼게 하세요 (최소 2~3분 시도)</li>
+<li>“직선 2개 쓰면?” 버튼은 학생이 충분히 좌절한 후에 안내하세요</li>
+<li>이 경험이 3차시 다층 신경망의 동기 부여가 됩니다</li>
+</ul>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="학생-예상-질문--답변">학생 예상 질문 &#x26; 답변</h2><a class="sl-anchor-link" href="#학생-예상-질문--답변"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “학생 예상 질문 &#x26; 답변”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>#</th><th>예상 질문</th><th>교사 답변 가이드</th></tr></thead><tbody><tr><td>1</td><td>”가중치가 뭐예요?"</td><td>"대입에서 ‘수학에 가중치 1.2’ 같은 거예요. 어떤 입력이 결과에 더 많이 영향을 미치는지를 정하는 숫자입니다.”</td></tr><tr><td>2</td><td>”편향(b)은 왜 필요해요?"</td><td>"합격 커트라인이라고 생각하세요. 기준점을 올리거나 내리는 역할이에요.”</td></tr><tr><td>3</td><td>”XOR이 왜 안 돼요?"</td><td>"직선 하나로는 대각선 방향으로 엇갈린 점을 나눌 수 없어요. 종이에 직접 그려보면 알 수 있어요.”</td></tr><tr><td>4</td><td>”퍼셉트론이 지금도 쓰여요?"</td><td>"단독으로는 거의 안 쓰이지만, 현재 모든 신경망의 기본 단위예요. 레고 블록 하나라고 생각하면 돼요.”</td></tr><tr><td>5</td><td>”틀리면 고치는 게 진짜 학습이에요?"</td><td>"좋은 질문이에요. 사람의 학습과 비교하면 아주 단순하지만, ‘데이터를 보고 스스로 개선한다’는 점에서 학습이라고 부릅니다.”</td></tr><tr><td>6</td><td>”직선 2개면 모든 문제가 풀려요?"</td><td>"2개로 안 되는 문제도 있어요. 3개, 10개, 100개가 필요할 수도 있죠. 그게 3차시에서 다룰 내용이에요.”</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="평가-포인트">평가 포인트</h2><a class="sl-anchor-link" href="#평가-포인트"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “평가 포인트”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>평가 항목</th><th>관찰 기준</th><th>수준</th></tr></thead><tbody><tr><td>퍼셉트론 구조 이해</td><td>입력, 가중치, 편향, 활성화함수의 역할을 설명할 수 있는가</td><td>기본</td></tr><tr><td>결정 경계 이해</td><td>”직선으로 데이터를 나눈다”는 개념을 말할 수 있는가</td><td>기본</td></tr><tr><td>학습 규칙 이해</td><td>”틀리면 고치고, 맞으면 냅둔다”를 자신의 말로 설명할 수 있는가</td><td>기본</td></tr><tr><td>XOR 한계 인식</td><td>직선 하나로 풀 수 없는 문제가 있다는 것을 이해하는가</td><td>기본</td></tr><tr><td>해결 방향 추론</td><td>”직선을 여러 개 쓰면 된다”는 아이디어를 자신의 말로 표현할 수 있는가</td><td>심화</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="폴백-계획-기술-장애-시-대안-활동">폴백 계획 (기술 장애 시 대안 활동)</h2><a class="sl-anchor-link" href="#폴백-계획-기술-장애-시-대안-활동"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “폴백 계획 (기술 장애 시 대안 활동)”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="시나리오-a-시뮬레이터-로딩-실패">시나리오 A: 시뮬레이터 로딩 실패</h3><a class="sl-anchor-link" href="#시나리오-a-시뮬레이터-로딩-실패"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “시나리오 A: 시뮬레이터 로딩 실패”</span></a></div>
+<p><strong>대안 활동 — 종이 위의 퍼셉트론 (30분)</strong></p>
+<ol>
+<li>모눈종이에 AND 데이터 4개를 좌표로 찍기: (0,0)=파랑, (0,1)=파랑, (1,0)=파랑, (1,1)=빨강</li>
+<li>자를 사용해 직선을 그어 빨간 점과 파란 점을 나눠보기</li>
+<li>OR 데이터로 교체하여 반복</li>
+<li>XOR 데이터: (0,0)=파랑, (0,1)=빨강, (1,0)=빨강, (1,1)=파랑 → 직선으로 나눠보기</li>
+<li>“안 되는 이유”를 짝과 토의</li>
+</ol>
+<div class="sl-heading-wrapper level-h3"><h3 id="시나리오-b-일부-pc만-작동">시나리오 B: 일부 PC만 작동</h3><a class="sl-anchor-link" href="#시나리오-b-일부-pc만-작동"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “시나리오 B: 일부 PC만 작동”</span></a></div>
+<ul>
+<li>작동하는 PC를 사용하는 학생은 시뮬레이터 활동</li>
+<li>나머지 학생은 종이 활동 → 시뮬레이터 학생의 화면을 함께 관찰</li>
+<li>2인 1PC 형태로 운영 가능 (한 명이 조작, 한 명이 관찰/기록)</li>
+</ul>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="교사-배경지식">교사 배경지식</h2><a class="sl-anchor-link" href="#교사-배경지식"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “교사 배경지식”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="프랭크-로젠블랫-1928-1971">프랭크 로젠블랫 (1928-1971)</h3><a class="sl-anchor-link" href="#프랭크-로젠블랫-1928-1971"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “프랭크 로젠블랫 (1928-1971)”</span></a></div>
+<ul>
+<li>코넬 대학교 심리학과 교수. 퍼셉트론의 창시자</li>
+<li>1958년 Mark I 퍼셉트론 — 이미지 인식을 위한 최초의 학습 기계</li>
+<li>뉴욕타임스 1958.7.8 기사: “해군이 전자 두뇌의 태아를 공개. 걷고, 말하고, 보고, 쓰고, 자신을 재생산하고, 자신의 존재를 인식할 것으로 기대”</li>
+<li>1971년 43세에 체서피크 만에서 보트 사고로 사망. 퍼셉트론의 가능성이 완전히 탐구되기 전에 세상을 떠남</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="민스키와-파퍼트의-perceptrons-1969">민스키와 파퍼트의 《Perceptrons》 (1969)</h3><a class="sl-anchor-link" href="#민스키와-파퍼트의-perceptrons-1969"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “민스키와 파퍼트의 《Perceptrons》 (1969)”</span></a></div>
+<ul>
+<li>마빈 민스키(MIT)와 시무어 파퍼트가 저술</li>
+<li>XOR 문제를 포함하여 단층 퍼셉트론이 풀 수 없는 문제들을 수학적으로 증명</li>
+<li>이 책의 영향으로 신경망 연구에 대한 펀딩이 거의 20년간 끊김 → AI 겨울</li>
+<li>역사적 논쟁: 민스키가 다층 신경망의 가능성을 알면서도 의도적으로 무시했다는 주장도 있음</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="퍼셉트론-학습-규칙-교사가-알아두면-좋은-수학">퍼셉트론 학습 규칙 (교사가 알아두면 좋은 수학)</h3><a class="sl-anchor-link" href="#퍼셉트론-학습-규칙-교사가-알아두면-좋은-수학"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “퍼셉트론 학습 규칙 (교사가 알아두면 좋은 수학)”</span></a></div>
+<ul>
+<li>출력이 틀리면: w_new = w_old + η × (정답 - 예측) × 입력</li>
+<li>η(에타)는 학습률</li>
+<li>정답이 1인데 0으로 예측 → 가중치를 키움 (입력 방향으로)</li>
+<li>정답이 0인데 1로 예측 → 가중치를 줄임 (입력 반대 방향으로)</li>
+<li>“틀리면 고치고, 맞으면 냅둔다”가 이 수식의 직관적 표현</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="xor이-왜-안-되는가-수학적-이유">XOR이 왜 안 되는가 (수학적 이유)</h3><a class="sl-anchor-link" href="#xor이-왜-안-되는가-수학적-이유"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “XOR이 왜 안 되는가 (수학적 이유)”</span></a></div>
+<ul>
+<li>AND: (0,0)=0, (0,1)=0, (1,0)=0, (1,1)=1 → 직선 하나로 (1,1)만 분리 가능</li>
+<li>OR: (0,0)=0, (0,1)=1, (1,0)=1, (1,1)=1 → 직선 하나로 (0,0)만 분리 가능</li>
+<li>XOR: (0,0)=0, (0,1)=1, (1,0)=1, (1,1)=0 → 빨간 점이 대각선으로 배치되어 어떤 직선으로도 분리 불가</li>
+<li>기하학적으로: 선형 분리 가능(linearly separable)하지 않은 문제</li>
+</ul>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="수준별-지도-방안">수준별 지도 방안</h2><a class="sl-anchor-link" href="#수준별-지도-방안"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “수준별 지도 방안”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="빠른-학생을-위한-심화-활동">빠른 학생을 위한 심화 활동</h3><a class="sl-anchor-link" href="#빠른-학생을-위한-심화-활동"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “빠른 학생을 위한 심화 활동”</span></a></div>
+<ul>
+<li>“NAND (NOT AND)도 퍼셉트론으로 풀 수 있을까?” 시뮬레이터에서 시도해보기</li>
+<li>가중치 w1, w2와 편향 b의 관계를 직선의 방정식 w1x1 + w2x2 + b = 0으로 이해해보기</li>
+<li>“만약 데이터가 3차원이면? 직선 대신 무엇이 필요할까?” (평면 → 초평면 개념)</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="느린-학생을-위한-보조-전략">느린 학생을 위한 보조 전략</h3><a class="sl-anchor-link" href="#느린-학생을-위한-보조-전략"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “느린 학생을 위한 보조 전략”</span></a></div>
+<ul>
+<li>좌표평면이 익숙하지 않은 학생: “칸 4개짜리 표”로 단순화 (2x2 격자에 O/X 표시)</li>
+<li>슬라이더 조작이 어려운 학생: “w1을 먼저 고정하고, w2만 움직여보세요” 단계적 접근</li>
+<li>AND가 아직 안 풀린 학생: 교사가 옆에서 “직선을 오른쪽 위로 올려볼까?”처럼 방향 힌트</li>
+</ul>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="흔한-오개념과-교정">흔한 오개념과 교정</h2><a class="sl-anchor-link" href="#흔한-오개념과-교정"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “흔한 오개념과 교정”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>오개념</th><th>교정</th></tr></thead><tbody><tr><td>”가중치는 사람이 정하는 거다"</td><td>"처음에는 랜덤으로 시작하고, 학습 규칙에 따라 기계가 스스로 조정합니다. 이것이 ‘학습’입니다."</td></tr><tr><td>"XOR은 복잡한 문제라서 안 된다"</td><td>"복잡한 게 아니라, 데이터의 배치가 직선 하나로 나눌 수 없는 구조입니다. 데이터가 1000개여도 선형 분리 가능하면 퍼셉트론이 풀어요."</td></tr><tr><td>"직선 2개면 모든 문제가 풀린다"</td><td>"2개로 안 되는 문제도 있어요. 동심원 형태의 데이터는 직선 여러 개가 필요해요. 3차시에서 더 다룹니다."</td></tr><tr><td>"퍼셉트론은 옛날 것이라 지금은 안 쓰인다"</td><td>"단독으로는 안 쓰이지만, 현재 모든 신경망의 기본 단위(뉴런)가 퍼셉트론입니다. 레고 블록 하나와 같아요.”</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="참고자료">참고자료</h2><a class="sl-anchor-link" href="#참고자료"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “참고자료”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="영상-자료">영상 자료</h3><a class="sl-anchor-link" href="#영상-자료"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “영상 자료”</span></a></div>
+<ul>
+<li>3Blue1Brown: “Neural Networks” Chapter 1 (19분) — 퍼셉트론의 시각적 설명</li>
+<li>Computerphile: “Perceptrons” (12분) — 퍼셉트론의 역사와 한계</li>
+<li>PBS NOVA: “Who Was Alan Turing?” — 튜링과 초기 컴퓨터 과학</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="읽을거리">읽을거리</h3><a class="sl-anchor-link" href="#읽을거리"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “읽을거리”</span></a></div>
+<ul>
+<li>뉴욕타임스 1958.7.8 기사 “New Navy Device Learns By Doing” — 퍼셉트론에 대한 과장된 보도의 역사적 기록</li>
+<li>Minsky &#x26; Papert (1969). <em>Perceptrons</em> — 수학적 증명은 어렵지만, 서론만 읽어도 당시 분위기를 파악 가능</li>
+</ul>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="차시-연결">차시 연결</h2><a class="sl-anchor-link" href="#차시-연결"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “차시 연결”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="이전-차시-1차시-복습-포인트">이전 차시 (1차시) 복습 포인트</h3><a class="sl-anchor-link" href="#이전-차시-1차시-복습-포인트"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “이전 차시 (1차시) 복습 포인트”</span></a></div>
+<blockquote>
+<p>“지난 시간에 ‘기계가 생각할 수 있는가?‘를 물었죠. 오늘은 한 걸음 더 들어갑니다 — ‘기계가 스스로 배울 수 있는가?’”</p>
+</blockquote>
+<ul>
+<li>1차시의 튜링 테스트는 “행동”으로 판단하는 것이었음</li>
+<li>2차시는 그 “행동”을 만들어내는 메커니즘의 시작점</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="다음-차시-3차시-예고-포인트">다음 차시 (3차시) 예고 포인트</h3><a class="sl-anchor-link" href="#다음-차시-3차시-예고-포인트"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “다음 차시 (3차시) 예고 포인트”</span></a></div>
+<blockquote>
+<p>“오늘 XOR이 안 된다는 걸 발견했고, 직선을 여러 개 쓰면 된다는 것도 알았어요. 그런데 실제로 이걸 구현하려면 뭔가 하나가 더 필요합니다. 다음 시간에 그 ‘뭔가 하나’를 직접 켜봅니다.”</p>
+</blockquote>
+<p><strong>교사 메모:</strong> 2차시의 XOR 좌절 경험은 3차시 활성화함수 발견의 핵심 동기입니다. XOR이 안 된다는 좌절감이 클수록 3차시에서 활성화함수를 켤 때의 놀라움이 커집니다. 학생이 XOR을 충분히 시도하지 않고 넘어가면 3차시의 임팩트가 줄어드니, 최소 2~3분은 직접 시도하게 하세요.</p> </div> <footer class="sl-flex astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links print:hidden astro-u2l5gyhi" dir="ltr"> <a href="/ai-basic-textbook-teacher/lessons/part1/lesson-01/" rel="prev" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg> <span class="astro-u2l5gyhi"> 이전 페이지 <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">1차시: 기계가 생각할 수 있는가?</span> </span> </a> <a href="/ai-basic-textbook-teacher/lessons/part2/lesson-03/" rel="next" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> <span class="astro-u2l5gyhi"> 다음 페이지 <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">3차시: AI의 겨울을 이겨낸 알고리즘의 발견</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>
