@@ -1,0 +1,1008 @@
+<!DOCTYPE html><html lang="ko" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>과정중심평가 계획서 | AI 기초 지도서</title><link rel="canonical" href="https://greatsong.github.io/ai-basic-textbook-teacher/appendix/assessment-framework/"/><link rel="sitemap" href="/ai-basic-textbook-teacher/sitemap-index.xml"/><link rel="shortcut icon" href="/ai-basic-textbook-teacher/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v5.18.1"/><meta name="generator" content="Starlight v0.37.7"/><meta property="og:title" content="과정중심평가 계획서"/><meta property="og:type" content="article"/><meta property="og:url" content="https://greatsong.github.io/ai-basic-textbook-teacher/appendix/assessment-framework/"/><meta property="og:locale" content="ko"/><meta property="og:description" content="AI 기초 10차시 과정중심평가 계획서 — 평가 프레임워크, 도구, 피드백 체계, 성적 산출"/><meta property="og:site_name" content="AI 기초 지도서"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="AI 기초 10차시 과정중심평가 계획서 — 평가 프레임워크, 도구, 피드백 체계, 성적 산출"/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/ai-basic-textbook-teacher/_astro/print.DNXP8c50.css" media="print"><link rel="stylesheet" href="/ai-basic-textbook-teacher/_astro/index.BYJYQWGY.css">
+<style>@layer starlight.components{:root{--sl-badge-default-border: var(--sl-color-accent);--sl-badge-default-bg: var(--sl-color-accent-low);--sl-badge-default-text: #fff;--sl-badge-note-border: var(--sl-color-blue);--sl-badge-note-bg: var(--sl-color-blue-low);--sl-badge-note-text: #fff;--sl-badge-danger-border: var(--sl-color-red);--sl-badge-danger-bg: var(--sl-color-red-low);--sl-badge-danger-text: #fff;--sl-badge-success-border: var(--sl-color-green);--sl-badge-success-bg: var(--sl-color-green-low);--sl-badge-success-text: #fff;--sl-badge-caution-border: var(--sl-color-orange);--sl-badge-caution-bg: var(--sl-color-orange-low);--sl-badge-caution-text: #fff;--sl-badge-tip-border: var(--sl-color-purple);--sl-badge-tip-bg: var(--sl-color-purple-low);--sl-badge-tip-text: #fff}[data-theme=light]:root{--sl-badge-default-bg: var(--sl-color-accent-high);--sl-badge-note-bg: var(--sl-color-blue-high);--sl-badge-danger-bg: var(--sl-color-red-high);--sl-badge-success-bg: var(--sl-color-green-high);--sl-badge-caution-bg: var(--sl-color-orange-high);--sl-badge-tip-bg: var(--sl-color-purple-high)}.sl-badge:where(.astro-avdet4wd){display:inline-block;border:1px solid var(--sl-color-border-badge);border-radius:.25rem;font-family:var(--sl-font-system-mono);line-height:normal;color:var(--sl-color-text-badge);background-color:var(--sl-color-bg-badge);overflow-wrap:anywhere}.sidebar-content .sl-badge:where(.astro-avdet4wd){line-height:1;font-size:var(--sl-text-xs);padding:.125rem .375rem}.sidebar-content a[aria-current=page]>.sl-badge:where(.astro-avdet4wd){--sl-color-bg-badge: transparent;--sl-color-border-badge: currentColor;color:inherit}.default:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-default-bg);--sl-color-border-badge: var(--sl-badge-default-border);--sl-color-text-badge: var(--sl-badge-default-text)}.note:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-note-bg);--sl-color-border-badge: var(--sl-badge-note-border);--sl-color-text-badge: var(--sl-badge-note-text)}.danger:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-danger-bg);--sl-color-border-badge: var(--sl-badge-danger-border);--sl-color-text-badge: var(--sl-badge-danger-text)}.success:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-success-bg);--sl-color-border-badge: var(--sl-badge-success-border);--sl-color-text-badge: var(--sl-badge-success-text)}.tip:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-tip-bg);--sl-color-border-badge: var(--sl-badge-tip-border);--sl-color-text-badge: var(--sl-badge-tip-text)}.caution:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-caution-bg);--sl-color-border-badge: var(--sl-badge-caution-border);--sl-color-text-badge: var(--sl-badge-caution-text)}.small:where(.astro-avdet4wd){font-size:var(--sl-text-xs);padding:.125rem .25rem}.medium:where(.astro-avdet4wd){font-size:var(--sl-text-sm);padding:.175rem .35rem}.large:where(.astro-avdet4wd){font-size:var(--sl-text-base);padding:.225rem .45rem}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6) .sl-badge:where(.astro-avdet4wd){vertical-align:middle}}
+@layer starlight.components{.card:where(.astro-v5tidmuc){--sl-card-border: var(--sl-color-purple);--sl-card-bg: var(--sl-color-purple-low);border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-black);padding:clamp(1rem,calc(.125rem + 3vw),2.5rem);flex-direction:column;gap:clamp(.5rem,calc(.125rem + 1vw),1rem)}.card:where(.astro-v5tidmuc):nth-child(4n+1){--sl-card-border: var(--sl-color-orange);--sl-card-bg: var(--sl-color-orange-low)}.card:where(.astro-v5tidmuc):nth-child(4n+3){--sl-card-border: var(--sl-color-green);--sl-card-bg: var(--sl-color-green-low)}.card:where(.astro-v5tidmuc):nth-child(4n+4){--sl-card-border: var(--sl-color-red);--sl-card-bg: var(--sl-color-red-low)}.card:where(.astro-v5tidmuc):nth-child(4n+5){--sl-card-border: var(--sl-color-blue);--sl-card-bg: var(--sl-color-blue-low)}.title:where(.astro-v5tidmuc){font-weight:600;font-size:var(--sl-text-h4);color:var(--sl-color-white);line-height:var(--sl-line-height-headings);gap:1rem;align-items:center}.card:where(.astro-v5tidmuc) .icon:where(.astro-v5tidmuc){border:1px solid var(--sl-card-border);background-color:var(--sl-card-bg);padding:.2em;border-radius:.25rem;flex-shrink:0}.card:where(.astro-v5tidmuc) .body:where(.astro-v5tidmuc){margin:0;font-size:clamp(var(--sl-text-sm),calc(.5rem + 1vw),var(--sl-text-body))}}
+@layer starlight.components{.card-grid:where(.astro-zntqmydn){display:grid;grid-template-columns:100%;gap:1rem}.card-grid:where(.astro-zntqmydn)>*{margin-top:0!important}@media(min-width:50rem){.card-grid:where(.astro-zntqmydn){grid-template-columns:1fr 1fr;gap:1.5rem}.stagger:where(.astro-zntqmydn){--stagger-height: 5rem;padding-bottom:var(--stagger-height)}.stagger:where(.astro-zntqmydn)>*:nth-child(2n){transform:translateY(var(--stagger-height))}}}
+@layer starlight.components{svg:where(.astro-c6vsoqas){color:var(--sl-icon-color);font-size:var(--sl-icon-size, 1em);width:1em;height:1em}}
+@layer starlight.components{.sl-link-card:where(.astro-mf7fz2mj){display:grid;grid-template-columns:1fr auto;gap:.5rem;border:1px solid var(--sl-color-gray-5);border-radius:.5rem;padding:1rem;box-shadow:var(--sl-shadow-sm);position:relative}a:where(.astro-mf7fz2mj){text-decoration:none;line-height:var(--sl-line-height-headings)}a:where(.astro-mf7fz2mj):before{content:"";position:absolute;inset:0}.stack:where(.astro-mf7fz2mj){flex-direction:column;gap:.5rem}.title:where(.astro-mf7fz2mj){color:var(--sl-color-white);font-weight:600;font-size:var(--sl-text-lg)}.description:where(.astro-mf7fz2mj){color:var(--sl-color-gray-3);line-height:1.5}.icon:where(.astro-mf7fz2mj){color:var(--sl-color-gray-3)}.sl-link-card:where(.astro-mf7fz2mj):hover{background:var(--sl-color-gray-7, var(--sl-color-gray-6));border-color:var(--sl-color-gray-2)}.sl-link-card:where(.astro-mf7fz2mj):hover .icon:where(.astro-mf7fz2mj){color:var(--sl-color-white)}}
+@layer starlight.components{.sl-steps{--bullet-size: calc(var(--sl-line-height) * 1rem);--bullet-margin: .375rem;list-style:none;counter-reset:steps-counter var(--sl-steps-start, 0);padding-inline-start:0}.sl-steps>li{counter-increment:steps-counter;position:relative;padding-inline-start:calc(var(--bullet-size) + 1rem);padding-bottom:1px;min-height:calc(var(--bullet-size) + var(--bullet-margin))}.sl-steps>li+li{margin-top:0}.sl-steps>li:before{content:counter(steps-counter);position:absolute;top:0;inset-inline-start:0;width:var(--bullet-size);height:var(--bullet-size);line-height:var(--bullet-size);font-size:var(--sl-text-xs);font-weight:600;text-align:center;color:var(--sl-color-white);background-color:var(--sl-color-gray-6);border-radius:99rem;box-shadow:inset 0 0 0 1px var(--sl-color-gray-5)}.sl-steps>li:after{--guide-width: 1px;content:"";position:absolute;top:calc(var(--bullet-size) + var(--bullet-margin));bottom:var(--bullet-margin);inset-inline-start:calc((var(--bullet-size) - var(--guide-width)) / 2);width:var(--guide-width);background-color:var(--sl-color-hairline-light)}}@layer starlight.content{.sl-steps>li>:first-child{--lh: calc(1em * var(--sl-line-height));--shift-y: calc(.5 * (var(--bullet-size) - var(--lh)));transform:translateY(var(--shift-y));margin-bottom:var(--shift-y)}.sl-steps>li>:first-child:where(h1,h2,h3,h4,h5,h6){--lh: calc(1em * var(--sl-line-height-headings))}@supports (--prop: 1lh){.sl-steps>li>:first-child{--lh: 1lh}}}
+@layer starlight.components{.sl-link-button:where(.astro-xwgiixxa){align-items:center;border:1px solid transparent;border-radius:999rem;display:inline-flex;font-size:var(--sl-text-sm);gap:.5em;line-height:1.1875;outline-offset:.25rem;padding:.4375rem 1.125rem;text-decoration:none}.sl-link-button:where(.astro-xwgiixxa).primary{background:var(--sl-color-text-accent);border-color:var(--sl-color-text-accent);color:var(--sl-color-black)}.sl-link-button:where(.astro-xwgiixxa).primary:hover{color:var(--sl-color-black)}.sl-link-button:where(.astro-xwgiixxa).secondary{border-color:inherit;color:var(--sl-color-white)}.sl-link-button:where(.astro-xwgiixxa).minimal{color:var(--sl-color-white);padding-inline:0}.sl-link-button:where(.astro-xwgiixxa) svg{flex-shrink:0}@media(min-width:50rem){.sl-link-button:where(.astro-xwgiixxa){font-size:var(--sl-text-base);padding:.9375rem 1.25rem}}.sl-markdown-content .sl-link-button:where(.astro-xwgiixxa){margin-inline-end:1rem}.sl-markdown-content .sl-link-button:where(.astro-xwgiixxa):not(:where(p *)){margin-block:1rem}}
+</style><script type="module" src="/ai-basic-textbook-teacher/_astro/page.B1D-nYk3.js"></script></head> <body class="astro-bguv2lll"> <a href="#_top" class="astro-7q3lir66">콘텐츠로 이동</a>  <div class="page sl-flex astro-vrdttmbt"> <header class="header astro-vrdttmbt"><div class="header astro-kmkmnagf"> <div class="title-wrapper sl-flex astro-kmkmnagf"> <a href="/ai-basic-textbook-teacher/" class="site-title sl-flex astro-m46x6ez3">  <span class="astro-m46x6ez3" translate="no"> AI 기초 지도서 </span> </a>  </div> <div class="sl-flex print:hidden astro-kmkmnagf"> <site-search class="astro-kmkmnagf astro-v37mnknz" data-translations="{&#34;placeholder&#34;:&#34;검색&#34;}"> <button data-open-modal disabled aria-label="검색" aria-keyshortcuts="Control+K" class="astro-v37mnknz"> <svg aria-hidden="true" class="astro-v37mnknz astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg> <span class="sl-hidden md:sl-block astro-v37mnknz" aria-hidden="true">검색</span> <kbd class="sl-hidden md:sl-flex astro-v37mnknz" style="display: none;"> <kbd class="astro-v37mnknz">Ctrl</kbd><kbd class="astro-v37mnknz">K</kbd> </kbd> </button> <dialog style="padding:0" aria-label="검색" class="astro-v37mnknz"> <div class="dialog-frame sl-flex astro-v37mnknz">  <button data-close-modal class="sl-flex md:sl-hidden astro-v37mnknz"> 취소 </button> <div class="search-container astro-v37mnknz"> <div id="starlight__search" class="astro-v37mnknz"></div> </div> </div> </dialog> </site-search>  <script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script> <script type="module" src="/ai-basic-textbook-teacher/_astro/Search.astro_astro_type_script_index_0_lang.CtJXzPqH.js"></script>   </div> <div class="sl-hidden md:sl-flex print:hidden right-group astro-kmkmnagf"> <div class="sl-flex social-icons astro-kmkmnagf">  </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">테마 선택</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">어두운 테마</option><option value="light" class="astro-4yphtoen">밝은 테마</option><option value="auto" selected class="astro-4yphtoen">자동</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script> <script type="module">const r="starlight-theme",o=e=>e==="auto"||e==="dark"||e==="light"?e:"auto",c=()=>o(typeof localStorage<"u"&&localStorage.getItem(r));function n(e){typeof localStorage<"u"&&localStorage.setItem(r,e==="light"||e==="dark"?e:"")}const l=()=>matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";function t(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e==="auto"?l():e,n(e)}matchMedia("(prefers-color-scheme: light)").addEventListener("change",()=>{c()==="auto"&&t("auto")});class s extends HTMLElement{constructor(){super(),t(c()),this.querySelector("select")?.addEventListener("change",a=>{a.currentTarget instanceof HTMLSelectElement&&t(o(a.currentTarget.value))})}}customElements.define("starlight-theme-select",s);</script> <script type="module">class s extends HTMLElement{constructor(){super();const e=this.querySelector("select");e&&(e.addEventListener("change",t=>{t.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=t.currentTarget.value)}),window.addEventListener("pageshow",t=>{if(!t.persisted)return;const n=e.querySelector("option[selected]")?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}}customElements.define("starlight-lang-select",s);</script> </div> </div> </header> <nav class="sidebar print:hidden astro-vrdttmbt" aria-label="메인"> <starlight-menu-button class="print:hidden astro-jif73yzw"> <button aria-expanded="false" aria-label="메뉴" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-jif73yzw"> <svg aria-hidden="true" class="open-menu astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg> <svg aria-hidden="true" class="close-menu astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg> </button> </starlight-menu-button> <script type="module">class s extends HTMLElement{constructor(){super(),this.btn=this.querySelector("button"),this.btn.addEventListener("click",()=>this.toggleExpanded());const t=this.closest("nav");t&&t.addEventListener("keyup",e=>this.closeOnEscape(e))}setExpanded(t){this.setAttribute("aria-expanded",String(t)),document.body.toggleAttribute("data-mobile-menu-expanded",t)}toggleExpanded(){this.setExpanded(this.getAttribute("aria-expanded")!=="true")}closeOnEscape(t){t.code==="Escape"&&(this.setExpanded(!1),this.btn.focus())}}customElements.define("starlight-menu-button",s);</script>   <div id="starlight__sidebar" class="sidebar-pane astro-vrdttmbt"> <div class="sidebar-content sl-flex astro-vrdttmbt"> <sl-sidebar-state-persist data-hash="1q6vgtd" class="astro-kku4brbg"> <script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script>  <ul class="top-level astro-3ii7xxms"> <li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">📋 시작 가이드</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="0"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/guide/how-to-use/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">지도서 사용법</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/guide/preparation/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">수업 전 준비</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Part 1 — AI의 시작</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="1"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part1/lesson-01/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">1차시: 기계가 생각할 수 있는가?</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part1/lesson-02/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">2차시: 기계가 스스로 학습할 수 있는가?</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Part 2 — 신경망의 비밀</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="2"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part2/lesson-03/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">3차시: AI의 겨울을 이겨낸 알고리즘의 발견</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part2/lesson-04/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">4차시: &quot;잘 학습됐다&quot;는 것을 어떻게 알 수 있을까?</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Part 3 — 학습의 원리</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="3"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part3/lesson-05/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">5차시: 오차 줄이는 방향으로 나아가는 방법</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part3/lesson-06/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">6차시: 오차를 줄이는 과정을 자동화하려면</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Part 4 — 언어를 이해하는 AI</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="4"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part4/lesson-07/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">7차시: 단어를 숫자로 표현하면 계산할 수 있다</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part4/lesson-08/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">8차시: ChatGPT의 작동 원리, 다음 단어 맞추기</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Part 5 — 확장 모듈</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="5"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part5/lesson-09/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">9차시: 퍼셉트론에서 ChatGPT까지, 인공지능 연구의 역사</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/lessons/part5/lesson-10/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">10차시: 같은 질문, 다른 깊이</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">📎 부록</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="6"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/appendix/assessment-framework/" aria-current="page" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">과정중심평가 계획서</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/appendix/rubric/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">평가 루브릭</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/appendix/sample-answers/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">예시 답안</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook-teacher/appendix/observation/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">학생 관찰 기록</span>  </a> </li> </ul>  </details> </li> </ul>   <script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script> </sl-sidebar-state-persist>  <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-wu23bvmt"> <div class="social-icons astro-wu23bvmt">  </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">테마 선택</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">어두운 테마</option><option value="light" class="astro-4yphtoen">밝은 테마</option><option value="auto" selected class="astro-4yphtoen">자동</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container print:hidden astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <script type="module" src="/ai-basic-textbook-teacher/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.hwBsy0Mo.js"></script><script type="module" src="/ai-basic-textbook-teacher/_astro/TableOfContents.astro_astro_type_script_index_0_lang.FuRcXuRY.js"></script><div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><span class="toggle sl-flex astro-doynk5tl">목차<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">개요</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#1-과정중심평가-개요" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">1. 과정중심평가 개요</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#2-평가-프레임워크" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">2. 평가 프레임워크</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#3-학습목표-평가-연계표" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">3. 학습목표-평가 연계표</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#4-과정평가-도구-40점" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">4. 과정평가 도구 (40점)</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#4-1-교사-관찰-평가-20점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">4-1. 교사 관찰 평가 (20점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#4-2-학생-자기-평가" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">4-2. 학생 자기 평가</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#4-3-동료-평가-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">4-3. 동료 평가 (10점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#4-4-포트폴리오-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">4-4. 포트폴리오 (10점)</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#5-결과평가-도구-60점" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">5. 결과평가 도구 (60점)</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#5-1-형성평가-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">5-1. 형성평가 (10점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#5-2-서술형-평가-40점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">5-2. 서술형 평가 (40점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#5-3-beforeafter-성찰-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">5-3. Before/After 성찰 (10점)</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#6-피드백-체계" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">6. 피드백 체계</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#수준별-피드백-방법" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">수준별 피드백 방법</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#서술형-피드백-템플릿" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">서술형 피드백 템플릿</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#7-성적-산출" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">7. 성적 산출</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#과정평가-40점-산출" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">과정평가 40점 산출</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#결과평가-60점-산출" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">결과평가 60점 산출</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#총점--과정평가40--결과평가60--100점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">총점 = 과정평가(40) + 결과평가(60) = 100점</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#등급-산출" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">등급 산출</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#생활기록부-기재문" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">생활기록부 기재문</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#8-평가-일람표" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">8. 평가 일람표</span> </a>  </li> </ul> </div></details></nav></mobile-starlight-toc></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">목차</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">개요</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#1-과정중심평가-개요" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">1. 과정중심평가 개요</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#2-평가-프레임워크" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">2. 평가 프레임워크</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#3-학습목표-평가-연계표" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">3. 학습목표-평가 연계표</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#4-과정평가-도구-40점" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">4. 과정평가 도구 (40점)</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#4-1-교사-관찰-평가-20점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">4-1. 교사 관찰 평가 (20점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#4-2-학생-자기-평가" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">4-2. 학생 자기 평가</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#4-3-동료-평가-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">4-3. 동료 평가 (10점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#4-4-포트폴리오-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">4-4. 포트폴리오 (10점)</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#5-결과평가-도구-60점" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">5. 결과평가 도구 (60점)</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#5-1-형성평가-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">5-1. 형성평가 (10점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#5-2-서술형-평가-40점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">5-2. 서술형 평가 (40점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#5-3-beforeafter-성찰-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">5-3. Before/After 성찰 (10점)</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#6-피드백-체계" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">6. 피드백 체계</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#수준별-피드백-방법" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">수준별 피드백 방법</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#서술형-피드백-템플릿" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">서술형 피드백 템플릿</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#7-성적-산출" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">7. 성적 산출</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#과정평가-40점-산출" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">과정평가 40점 산출</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#결과평가-60점-산출" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">결과평가 60점 산출</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#총점--과정평가40--결과평가60--100점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">총점 = 과정평가(40) + 결과평가(60) = 100점</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#등급-산출" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">등급 산출</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#생활기록부-기재문" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">생활기록부 기재문</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#8-평가-일람표" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">8. 평가 일람표</span> </a>  </li> </ul> </nav></starlight-toc></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body class="astro-bguv2lll" lang="ko" dir="ltr">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">과정중심평가 계획서</h1>  </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <div class="sl-heading-wrapper level-h2"><h2 id="1-과정중심평가-개요">1. 과정중심평가 개요</h2><a class="sl-anchor-link" href="#1-과정중심평가-개요"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “1. 과정중심평가 개요”</span></a></div>
+<p>과정중심평가란 교육과정 성취기준에 기반하여, 교수·학습 과정에서 학생의 변화와 성장에 대한 자료를 다각도로 수집하고 적절한 피드백을 제공하는 평가이다. AI 기초 수업은 매 차시 시뮬레이터 실습, 사고실험, 모둠 토의 등 <strong>과정 자체가 학습의 핵심</strong>이므로 과정중심평가에 특히 적합하다. 최종 서술형 점수만으로는 포착할 수 없는 사고의 변화(1차시 “AI는 멍청해서” → 10차시 “구조적 필연”)를 기록하고, 즉각적 피드백으로 학습을 촉진한다.</p>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="2-평가-프레임워크">2. 평가 프레임워크</h2><a class="sl-anchor-link" href="#2-평가-프레임워크"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “2. 평가 프레임워크”</span></a></div>
+<div class="expressive-code"><link rel="stylesheet" href="/ai-basic-textbook-teacher/_astro/ec.rvnnt.css"><script type="module" src="/ai-basic-textbook-teacher/_astro/ec.0vx5m.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">총점 100점</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── 과정평가 40점 (수업 중 수집)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   ├── 교사 관찰 평가 ····· 20점 (차시별 관찰 체크리스트)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   ├── 포트폴리오 ········· 10점 (차시별 산출물 모음)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   └── 동료 평가 ·········· 10점 (모둠 활동 상호 평가)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">└── 결과평가 60점 (수업 후 수집)</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">├── 형성평가 ············ 10점 (1-8차시 퀴즈/활동 요약)</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">├── 서술형 평가 ········· 40점 (A·B·C유형 7문항, 100점 만점 → 40점 환산)</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">└── Before/After 성찰 ·· 10점 (1차시 vs 9-10차시 비교)</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="총점 100점├── 과정평가 40점 (수업 중 수집)│   ├── 교사 관찰 평가 ····· 20점 (차시별 관찰 체크리스트)│   ├── 포트폴리오 ········· 10점 (차시별 산출물 모음)│   └── 동료 평가 ·········· 10점 (모둠 활동 상호 평가)│└── 결과평가 60점 (수업 후 수집)    ├── 형성평가 ············ 10점 (1-8차시 퀴즈/활동 요약)    ├── 서술형 평가 ········· 40점 (A·B·C유형 7문항, 100점 만점 → 40점 환산)    └── Before/After 성찰 ·· 10점 (1차시 vs 9-10차시 비교)"><div></div></button></div></figure></div>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="3-학습목표-평가-연계표">3. 학습목표-평가 연계표</h2><a class="sl-anchor-link" href="#3-학습목표-평가-연계표"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “3. 학습목표-평가 연계표”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>차시</th><th>학습목표</th><th>평가 방법</th><th>시기</th><th>블룸 수준</th></tr></thead><tbody><tr><td>1</td><td>튜링 테스트 개념을 이해하고 AI 정의에 대해 토론</td><td>교사 관찰, Before 성찰 기록</td><td>수업 중</td><td>기억</td></tr><tr><td>2</td><td>퍼셉트론 구조와 XOR 한계 발견</td><td>교사 관찰, 형성평가</td><td>수업 중</td><td>적용</td></tr><tr><td>3</td><td>활성화함수의 역할과 4종 비교</td><td>교사 관찰, 형성평가</td><td>수업 중</td><td>이해/분석</td></tr><tr><td>4</td><td>손실함수 정의와 “학습=손실 줄이기”</td><td>교사 관찰, 형성평가</td><td>수업 중</td><td>이해</td></tr><tr><td>5</td><td>경사하강법 원리와 학습률 효과 체험</td><td>교사 관찰, 형성평가</td><td>수업 중</td><td>적용</td></tr><tr><td>6</td><td>순전파-역전파 4단계 과정 이해</td><td>교사 관찰, 형성평가</td><td>수업 중</td><td>적용/분석</td></tr><tr><td>7</td><td>토큰화와 임베딩의 차이 이해</td><td>교사 관찰, 형성평가</td><td>수업 중</td><td>적용</td></tr><tr><td>8</td><td>다음 토큰 예측, 환각의 구조적 원인</td><td>교사 관찰, 형성평가</td><td>수업 중</td><td>이해</td></tr><tr><td>9</td><td>AI 역사의 인과관계 파악, 진로 탐색</td><td>교사 관찰, 동료 평가, 포트폴리오</td><td>수업 중</td><td>분석/종합</td></tr><tr><td>10</td><td>AI 한계 실험과 개념 기반 분석</td><td>교사 관찰, 동료 평가, After 성찰</td><td>수업 중</td><td>평가/종합</td></tr><tr><td>수업 후</td><td>개념의 정확한 이해 및 인과적 연결</td><td>서술형 평가 (A·B·C)</td><td>10차시 이후</td><td>전 수준</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="4-과정평가-도구-40점">4. 과정평가 도구 (40점)</h2><a class="sl-anchor-link" href="#4-과정평가-도구-40점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “4. 과정평가 도구 (40점)”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="4-1-교사-관찰-평가-20점">4-1. 교사 관찰 평가 (20점)</h3><a class="sl-anchor-link" href="#4-1-교사-관찰-평가-20점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “4-1. 교사 관찰 평가 (20점)”</span></a></div>
+<p>10차시 전체 관찰 점수의 평균을 20점 만점으로 환산한다. 차시당 5~8명을 집중 관찰하여 10차시 동안 모든 학생을 최소 3회 이상 기록한다.</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="5단계-관찰-척도">5단계 관찰 척도</h4><a class="sl-anchor-link" href="#5단계-관찰-척도"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “5단계 관찰 척도”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>점수</th><th>수준</th><th>판단 기준</th></tr></thead><tbody><tr><td>5</td><td>탁월</td><td>적극 참여 + 창의적 기여 (새로운 질문 제기, 동료 학습 도움, 독창적 전략)</td></tr><tr><td>4</td><td>우수</td><td>적극 참여 (활동 완수, 토의 의견 제시, 질문에 대답 시도)</td></tr><tr><td>3</td><td>보통</td><td>기본 참여 (활동 수행하나 발언 적음)</td></tr><tr><td>2</td><td>미흡</td><td>소극적 참여 (집중도 낮음, 토의 불참)</td></tr><tr><td>1</td><td>부족</td><td>참여 거부 또는 방해</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h4"><h4 id="차시별-관찰-체크리스트-인쇄용-통합표">차시별 관찰 체크리스트 (인쇄용 통합표)</h4><a class="sl-anchor-link" href="#차시별-관찰-체크리스트-인쇄용-통합표"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “차시별 관찰 체크리스트 (인쇄용 통합표)”</span></a></div>
+<p>아래 표를 인쇄하여 학생 1인당 1장씩 사용한다. 해당 차시에 관찰 대상이 아닌 경우 빈칸으로 둔다.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">┌──────────────────────────────────────────────────────────────────┐</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 학생명: ______________  학번: __________  반: ____               │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┬────────────────────────────────┬──────┬────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│차시│ 핵심 관찰 항목                  │ 척도 │ 메모               │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│    │                                │(1-5) │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┼────────────────────────────────┼──────┼────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 1  │ 튜링 테스트 질문 전략 다양성    │      │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┼────────────────────────────────┼──────┼────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 2  │ XOR 좌절 경험 및 가설 제시      │      │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┼────────────────────────────────┼──────┼────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 3  │ 활성화함수 ON/OFF 반응 깊이     │      │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┼────────────────────────────────┼──────┼────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 4  │ 직선 피팅 전략성 + 이상치 관찰  │      │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┼────────────────────────────────┼──────┼────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 5  │ 레이싱 전략 수립 및 이론 연결   │      │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┼────────────────────────────────┼──────┼────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 6  │ 순전파 손계산 완수 여부         │      │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┼────────────────────────────────┼──────┼────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 7  │ 임베딩 갤럭시 탐험 패턴 발견    │      │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┼────────────────────────────────┼──────┼────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 8  │ Temperature 실험 + 환각 원인 고찰│      │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┼────────────────────────────────┼──────┼────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 9  │ 팀별 논문 탐구 + 인과관계 파악  │      │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┼────────────────────────────────┼──────┼────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 10 │ 한계 실험 분석 + 구조적 설명    │      │                    │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├────┴────────────────────────────────┴──────┴────────────────────┤</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 관찰 횟수 합계: ____회   평균 점수: ____점                        │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│ 종합 메모:                                                       │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│                                                                  │</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">└──────────────────────────────────────────────────────────────────┘</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="┌──────────────────────────────────────────────────────────────────┐│ 학생명: ______________  학번: __________  반: ____               │├────┬────────────────────────────────┬──────┬────────────────────┤│차시│ 핵심 관찰 항목                  │ 척도 │ 메모               ││    │                                │(1-5) │                    │├────┼────────────────────────────────┼──────┼────────────────────┤│ 1  │ 튜링 테스트 질문 전략 다양성    │      │                    │├────┼────────────────────────────────┼──────┼────────────────────┤│ 2  │ XOR 좌절 경험 및 가설 제시      │      │                    │├────┼────────────────────────────────┼──────┼────────────────────┤│ 3  │ 활성화함수 ON/OFF 반응 깊이     │      │                    │├────┼────────────────────────────────┼──────┼────────────────────┤│ 4  │ 직선 피팅 전략성 + 이상치 관찰  │      │                    │├────┼────────────────────────────────┼──────┼────────────────────┤│ 5  │ 레이싱 전략 수립 및 이론 연결   │      │                    │├────┼────────────────────────────────┼──────┼────────────────────┤│ 6  │ 순전파 손계산 완수 여부         │      │                    │├────┼────────────────────────────────┼──────┼────────────────────┤│ 7  │ 임베딩 갤럭시 탐험 패턴 발견    │      │                    │├────┼────────────────────────────────┼──────┼────────────────────┤│ 8  │ Temperature 실험 + 환각 원인 고찰│      │                    │├────┼────────────────────────────────┼──────┼────────────────────┤│ 9  │ 팀별 논문 탐구 + 인과관계 파악  │      │                    │├────┼────────────────────────────────┼──────┼────────────────────┤│ 10 │ 한계 실험 분석 + 구조적 설명    │      │                    │├────┴────────────────────────────────┴──────┴────────────────────┤│ 관찰 횟수 합계: ____회   평균 점수: ____점                        ││ 종합 메모:                                                       ││                                                                  │└──────────────────────────────────────────────────────────────────┘"><div></div></button></div></figure></div>
+<p><strong>기록 원칙:</strong></p>
+<ul>
+<li>행동 중심 기록 (“잘했다” 대신 “~라고 말했다”, “~를 시도했다”)</li>
+<li>순회 중 즉시 메모 (수업 후 기억에 의존하지 않음)</li>
+<li>기호 활용: ★ 탁월한 발언, ? 오개념 징후, ↑ 성장, → 추가 지원 필요</li>
+</ul>
+<div class="sl-heading-wrapper level-h4"><h4 id="관찰-점수--20점-환산">관찰 점수 → 20점 환산</h4><a class="sl-anchor-link" href="#관찰-점수--20점-환산"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “관찰 점수 → 20점 환산”</span></a></div>
+<p>관찰된 차시들의 평균 점수를 다음과 같이 환산한다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>평균 점수</th><th>환산 점수</th></tr></thead><tbody><tr><td>4.5 이상</td><td>20</td></tr><tr><td>4.0~4.4</td><td>18</td></tr><tr><td>3.5~3.9</td><td>16</td></tr><tr><td>3.0~3.4</td><td>14</td></tr><tr><td>2.5~2.9</td><td>12</td></tr><tr><td>2.0~2.4</td><td>10</td></tr><tr><td>2.0 미만</td><td>8 이하 (비례)</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h3"><h3 id="4-2-학생-자기-평가">4-2. 학생 자기 평가</h3><a class="sl-anchor-link" href="#4-2-학생-자기-평가"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “4-2. 학생 자기 평가”</span></a></div>
+<p>자기 평가는 성적에 직접 반영하지 않으나, 메타인지 촉진과 교사 피드백 자료로 활용한다.</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="차시별-자기-점검-체크리스트-구글-설문-또는-인쇄">차시별 자기 점검 체크리스트 (구글 설문 또는 인쇄)</h4><a class="sl-anchor-link" href="#차시별-자기-점검-체크리스트-구글-설문-또는-인쇄"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “차시별 자기 점검 체크리스트 (구글 설문 또는 인쇄)”</span></a></div>
+<p>각 차시 종료 2분 전, 학생이 스스로 체크한다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th></tr></thead><tbody><tr><td>오늘 활동에 적극적으로 참여했다</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>오늘 배운 핵심 개념을 한 문장으로 말할 수 있다</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>궁금한 점이 생겼거나 새롭게 알게 된 것이 있다</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<p><strong>메타인지 기록 (한 줄):</strong></p>
+<blockquote>
+<p>“오늘 수업에서 가장 ‘아하!’했던 순간은? ________________“</p>
+</blockquote>
+<hr>
+<div class="sl-heading-wrapper level-h3"><h3 id="4-3-동료-평가-10점">4-3. 동료 평가 (10점)</h3><a class="sl-anchor-link" href="#4-3-동료-평가-10점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “4-3. 동료 평가 (10점)”</span></a></div>
+<p>9차시, 10차시 모둠 활동 종료 후 실시한다. 자신을 제외한 모둠원을 각각 평가한다.</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="동료-평가-양식-5단계-척도">동료 평가 양식 (5단계 척도)</h4><a class="sl-anchor-link" href="#동료-평가-양식-5단계-척도"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “동료 평가 양식 (5단계 척도)”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>평가 항목</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th></tr></thead><tbody><tr><td><strong>역할 수행</strong>: 맡은 역할을 책임감 있게 수행했다</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><strong>의견 제시</strong>: 구체적 근거를 들어 의견을 말했다</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><strong>경청 및 보완</strong>: 다른 사람의 의견을 듣고 보완했다</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><strong>개념 활용</strong>: 수업에서 배운 개념을 토의에 활용했다</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<p><strong>운영 규칙:</strong></p>
+<ul>
+<li>익명 처리 (교사만 확인)</li>
+<li>극단 점수(전원 5점 또는 전원 1점) 시 교사가 교차 확인</li>
+<li>동료 평가 점수 = 받은 점수의 평균 (20점 만점) → 10점 환산</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>동료 평가 평균</th><th>환산 점수</th></tr></thead><tbody><tr><td>4.5 이상</td><td>10</td></tr><tr><td>4.0~4.4</td><td>9</td></tr><tr><td>3.5~3.9</td><td>8</td></tr><tr><td>3.0~3.4</td><td>7</td></tr><tr><td>2.5~2.9</td><td>6</td></tr><tr><td>2.0~2.4</td><td>5</td></tr><tr><td>2.0 미만</td><td>4 이하 (비례)</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h3"><h3 id="4-4-포트폴리오-10점">4-4. 포트폴리오 (10점)</h3><a class="sl-anchor-link" href="#4-4-포트폴리오-10점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “4-4. 포트폴리오 (10점)”</span></a></div>
+<div class="sl-heading-wrapper level-h4"><h4 id="차시별-수집-산출물">차시별 수집 산출물</h4><a class="sl-anchor-link" href="#차시별-수집-산출물"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “차시별 수집 산출물”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>차시</th><th>산출물</th><th>형태</th></tr></thead><tbody><tr><td>1</td><td>구글 설문 성찰 기록 (Before)</td><td>디지털</td></tr><tr><td>2</td><td>XOR 실험 캡처 + 가설 메모</td><td>디지털/수기</td></tr><tr><td>3</td><td>활성화함수 4종 비교 기록</td><td>수기</td></tr><tr><td>4</td><td>MSE 손계산 워크시트</td><td>수기</td></tr><tr><td>5</td><td>레이싱 전략 기록 (1차 vs 2~3차 비교)</td><td>수기/디지털</td></tr><tr><td>6</td><td>순전파 계산 워크시트</td><td>수기</td></tr><tr><td>7</td><td>토큰화 실험 + 임베딩 탐험 기록</td><td>디지털</td></tr><tr><td>8</td><td>Temperature 실험 + 환각 사례 기록</td><td>디지털</td></tr><tr><td>9</td><td>논문 카드 탐구 기록 / AI 사례 조사 워크시트</td><td>수기/디지털</td></tr><tr><td>10</td><td>AI 한계 실험 기록 + After 성찰</td><td>수기/디지털</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h4"><h4 id="포트폴리오-평가-기준">포트폴리오 평가 기준</h4><a class="sl-anchor-link" href="#포트폴리오-평가-기준"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “포트폴리오 평가 기준”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>수준</th><th>점수</th><th>기준</th></tr></thead><tbody><tr><td>상</td><td>9~10</td><td>8개 이상 산출물 제출, 기록이 구체적이고 개인의 사고 과정이 드러남</td></tr><tr><td>중</td><td>6~8</td><td>5~7개 산출물 제출, 기록이 있으나 깊이가 부족한 항목 존재</td></tr><tr><td>하</td><td>3~5</td><td>3~4개 산출물 제출, 또는 형식적 기록</td></tr><tr><td>미달</td><td>0~2</td><td>2개 이하 제출</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="5-결과평가-도구-60점">5. 결과평가 도구 (60점)</h2><a class="sl-anchor-link" href="#5-결과평가-도구-60점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “5. 결과평가 도구 (60점)”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="5-1-형성평가-10점">5-1. 형성평가 (10점)</h3><a class="sl-anchor-link" href="#5-1-형성평가-10점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “5-1. 형성평가 (10점)”</span></a></div>
+<p>1~8차시 수업 중 실시하는 간단한 확인 활동을 종합한다. 별도 시험이 아니라 수업 활동의 완수 여부와 정확성을 기준으로 평가한다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>차시</th><th>형성평가 내용</th><th>확인 방법</th></tr></thead><tbody><tr><td>2</td><td>AND/OR 분류 성공 + XOR 실패 경험</td><td>시뮬레이터 기록</td></tr><tr><td>3</td><td>활성화함수 ON/OFF 실험 완수</td><td>시뮬레이터 기록</td></tr><tr><td>4</td><td>MSE 손계산 정확도</td><td>워크시트 확인</td></tr><tr><td>5</td><td>레이싱 전략 개선 여부 (1차 vs 2~3차)</td><td>기록 비교</td></tr><tr><td>6</td><td>순전파 계산 완수 여부</td><td>시뮬레이터/워크시트</td></tr><tr><td>7</td><td>토큰화 대결 참여 + 임베딩 탐험 패턴 발견</td><td>활동 기록</td></tr><tr><td>8</td><td>Temperature 실험 수행 + 환각 사례 1개 이상 발견</td><td>활동 기록</td></tr></tbody></table>
+<p><strong>채점:</strong> 7개 활동 중 완수한 수에 따라 10점 만점 비례 배점</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>완수 활동 수</th><th>점수</th></tr></thead><tbody><tr><td>7개</td><td>10</td></tr><tr><td>6개</td><td>9</td></tr><tr><td>5개</td><td>8</td></tr><tr><td>4개</td><td>7</td></tr><tr><td>3개</td><td>5</td></tr><tr><td>2개 이하</td><td>3 이하</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h3"><h3 id="5-2-서술형-평가-40점">5-2. 서술형 평가 (40점)</h3><a class="sl-anchor-link" href="#5-2-서술형-평가-40점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “5-2. 서술형 평가 (40점)”</span></a></div>
+<p>문항은 사전 공개하며, 10차시 이후 오프라인 손글씨로 작성한다.</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="문항-요약">문항 요약</h4><a class="sl-anchor-link" href="#문항-요약"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “문항 요약”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>유형</th><th>문항</th><th>측정 대상</th><th>원배점</th></tr></thead><tbody><tr><td>A1</td><td>활성화함수의 역할 + ReLU vs Sigmoid</td><td>개념 정확성</td><td>10</td></tr><tr><td>A2</td><td>손실함수의 역할 (학습·최적화 관계)</td><td>개념 정확성</td><td>10</td></tr><tr><td>A3</td><td>경사하강법 원리 (기울기·학습률·최솟값)</td><td>개념 정확성</td><td>10</td></tr><tr><td>A4</td><td>활성화함수 3종 이상 + 각 특징</td><td>개념 정확성</td><td>10</td></tr><tr><td>B1</td><td>단층 퍼셉트론의 XOR 한계 (좌표평면)</td><td>상황 적용</td><td>10</td></tr><tr><td>B2</td><td>활성화함수 전체 제거 시 문제 (XOR 예시)</td><td>상황 적용</td><td>10</td></tr><tr><td>C1</td><td>ChatGPT 환각 원인 (토큰화·확률·손실·데이터)</td><td>인과적 종합</td><td>20</td></tr><tr><td></td><td><strong>합계</strong></td><td></td><td><strong>80</strong></td></tr></tbody></table>
+<p><strong>80점 → 40점 환산:</strong> 서술형 원점수 x 0.5 = 환산 점수</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="채점-기준-요약-상세-루브릭은-rubricmdx-참조">채점 기준 요약 (상세 루브릭은 rubric.mdx 참조)</h4><a class="sl-anchor-link" href="#채점-기준-요약-상세-루브릭은-rubricmdx-참조"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “채점 기준 요약 (상세 루브릭은 rubric.mdx 참조)”</span></a></div>
+<p><strong>A·B유형 (각 10점):</strong></p>
+<ul>
+<li>상(9~10): 핵심 개념 정확 + 구체적 예시/비유</li>
+<li>중(6~8): 대체로 정확, 예시 부족 또는 일부 부정확</li>
+<li>하(3~5): 일부 개념만 서술 또는 불완전</li>
+<li>미달(0~2): 미이해 또는 무관한 내용</li>
+</ul>
+<p><strong>C유형 (20점, 항목별 5점):</strong></p>
+<ul>
+<li>토큰화 / 확률적 예측 / 손실함수 / 학습 데이터 각 5점</li>
+<li>4개 개념의 인과적 연결이 있으면 가산, 나열식이면 감점</li>
+</ul>
+<hr>
+<div class="sl-heading-wrapper level-h3"><h3 id="5-3-beforeafter-성찰-10점">5-3. Before/After 성찰 (10점)</h3><a class="sl-anchor-link" href="#5-3-beforeafter-성찰-10점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “5-3. Before/After 성찰 (10점)”</span></a></div>
+<p>1차시(Before)와 9~10차시(After)에서 같은 질문 “기계가 생각할 수 있는가?”에 대한 답변을 비교한다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>평가 항목</th><th>배점</th><th>5단계 기준</th></tr></thead><tbody><tr><td>1차시 답변 회고</td><td>2</td><td>과거 답변의 논리와 근거를 구체적으로 재구성(2) ~ 미작성(0)</td></tr><tr><td>10차시 답변의 깊이</td><td>4</td><td>개념 3개 이상 인과적 연결(4) ~ 미작성(0)</td></tr><tr><td>변화 인식</td><td>2</td><td>변화의 원인을 분석(2) ~ 미인식(0)</td></tr><tr><td>성찰의 진정성</td><td>2</td><td>자기 언어로 솔직 서술(2) ~ 형식적 답변(0)</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="6-피드백-체계">6. 피드백 체계</h2><a class="sl-anchor-link" href="#6-피드백-체계"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “6. 피드백 체계”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="수준별-피드백-방법">수준별 피드백 방법</h3><a class="sl-anchor-link" href="#수준별-피드백-방법"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “수준별 피드백 방법”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>수준</th><th>과정 피드백 (수업 중)</th><th>결과 피드백 (평가 후)</th></tr></thead><tbody><tr><td><strong>상</strong></td><td>”~라는 질문이 핵심을 찔렀어요. 더 나아가서 ~도 생각해보세요."</td><td>"인과관계 연결이 정확합니다. ~부분의 논거를 더 보강하면 완벽합니다.”</td></tr><tr><td><strong>중</strong></td><td>”좋은 시도예요. ~개념과 연결해서 다시 생각해보세요."</td><td>"핵심 개념은 이해하고 있습니다. ~에 구체적 예시를 추가해보세요.”</td></tr><tr><td><strong>하</strong></td><td>”어려웠죠? ~부분을 교재에서 다시 한번 확인해보세요."</td><td>"~개념부터 다시 정리해봅시다. 교재 N차시의 핵심 정리를 복습하세요.”</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="서술형-피드백-템플릿">서술형 피드백 템플릿</h3><a class="sl-anchor-link" href="#서술형-피드백-템플릿"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “서술형 피드백 템플릿”</span></a></div>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">[학생명]님, 서술형 평가 피드백입니다.</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">잘한 점: ________________________________</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">보완할 점: ______________________________</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">다음 단계: ______________________________</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="[학생명]님, 서술형 평가 피드백입니다.잘한 점: ________________________________보완할 점: ______________________________다음 단계: ______________________________"><div></div></button></div></figure></div>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="7-성적-산출">7. 성적 산출</h2><a class="sl-anchor-link" href="#7-성적-산출"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “7. 성적 산출”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="과정평가-40점-산출">과정평가 40점 산출</h3><a class="sl-anchor-link" href="#과정평가-40점-산출"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “과정평가 40점 산출”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>만점</th><th>산출 방법</th></tr></thead><tbody><tr><td>교사 관찰</td><td>20</td><td>관찰 차시 평균 점수 → 환산표 적용</td></tr><tr><td>포트폴리오</td><td>10</td><td>산출물 수 + 질적 수준 → 상/중/하 환산</td></tr><tr><td>동료 평가</td><td>10</td><td>동료 평가 평균 → 환산표 적용</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="결과평가-60점-산출">결과평가 60점 산출</h3><a class="sl-anchor-link" href="#결과평가-60점-산출"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “결과평가 60점 산출”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>만점</th><th>산출 방법</th></tr></thead><tbody><tr><td>형성평가</td><td>10</td><td>1-8차시 활동 완수 수 → 비례 배점</td></tr><tr><td>서술형 평가</td><td>40</td><td>7문항 원점수(80점 만점) x 0.5</td></tr><tr><td>Before/After</td><td>10</td><td>4개 항목 합산</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="총점--과정평가40--결과평가60--100점">총점 = 과정평가(40) + 결과평가(60) = 100점</h3><a class="sl-anchor-link" href="#총점--과정평가40--결과평가60--100점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “총점 = 과정평가(40) + 결과평가(60) = 100점”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="등급-산출">등급 산출</h3><a class="sl-anchor-link" href="#등급-산출"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “등급 산출”</span></a></div>
+<div class="sl-heading-wrapper level-h4"><h4 id="절대평가-성취수준-기준">절대평가 (성취수준) 기준</h4><a class="sl-anchor-link" href="#절대평가-성취수준-기준"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “절대평가 (성취수준) 기준”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>등급</th><th>점수 범위</th><th>설명</th></tr></thead><tbody><tr><td>A (매우 우수)</td><td>85~100</td><td>핵심 개념을 정확히 이해하고 인과적으로 연결하여 설명 가능</td></tr><tr><td>B (우수)</td><td>70~84</td><td>핵심 개념을 이해하고 부분적으로 적용 가능</td></tr><tr><td>C (보통)</td><td>55~69</td><td>기본 개념을 이해하나 적용에 어려움</td></tr><tr><td>D (노력 필요)</td><td>40~54</td><td>일부 개념을 이해하나 설명이 불완전</td></tr><tr><td>E (미도달)</td><td>0~39</td><td>핵심 개념의 이해가 부족</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h4"><h4 id="등급-산출-예시">등급 산출 예시</h4><a class="sl-anchor-link" href="#등급-산출-예시"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “등급 산출 예시”</span></a></div>
+<p><strong>예시 1: A등급 학생</strong></p>
+<ul>
+<li>교사 관찰 평균 4.5 → 20점</li>
+<li>포트폴리오 9개 제출 + 구체적 기록 → 10점</li>
+<li>동료 평가 평균 4.3 → 9점</li>
+<li>형성평가 7개 완수 → 10점</li>
+<li>서술형 원점수 74/80 → 37점</li>
+<li>Before/After 9/10 → 9점</li>
+<li><strong>총점: 95점 (A)</strong></li>
+</ul>
+<p><strong>예시 2: C등급 학생</strong></p>
+<ul>
+<li>교사 관찰 평균 3.2 → 14점</li>
+<li>포트폴리오 5개 제출 → 6점</li>
+<li>동료 평가 평균 3.0 → 7점</li>
+<li>형성평가 4개 완수 → 7점</li>
+<li>서술형 원점수 42/80 → 21점</li>
+<li>Before/After 5/10 → 5점</li>
+<li><strong>총점: 60점 (C)</strong></li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="생활기록부-기재문">생활기록부 기재문</h3><a class="sl-anchor-link" href="#생활기록부-기재문"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “생활기록부 기재문”</span></a></div>
+<p><strong>상 수준:</strong>
+인공지능의 핵심 원리(퍼셉트론, 활성화함수, 손실함수, 경사하강법, 역전파, 토큰화, 임베딩, 어텐션)를 정확히 이해하고, 각 개념을 인과적으로 연결하여 ChatGPT의 환각 현상을 구조적으로 설명함. 수업 활동에 적극적으로 참여하여 창의적 질문을 제기하고 동료 학습에 기여함.</p>
+<p><strong>중 수준:</strong>
+인공지능의 주요 개념(활성화함수, 손실함수, 경사하강법 등)을 이해하고 서술형 평가에서 핵심 개념을 활용하여 답변을 작성함. 시뮬레이터 활동과 모둠 토의에 성실히 참여하며, AI의 작동 원리에 대한 기본적인 이해를 보여줌.</p>
+<p><strong>하 수준:</strong>
+인공지능 기초 수업에 참여하여 퍼셉트론, 활성화함수, 손실함수 등 기본 개념을 접함. 시뮬레이터 활동을 통해 신경망의 학습 과정을 체험하고, AI의 한계에 대한 기초적인 인식을 갖춤.</p>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="8-평가-일람표">8. 평가 일람표</h2><a class="sl-anchor-link" href="#8-평가-일람표"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “8. 평가 일람표”</span></a></div>
+<p>10차시를 한눈에 보는 총괄표이다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>차시</th><th>주제</th><th align="center">교사 관찰</th><th align="center">자기 평가</th><th align="center">동료 평가</th><th align="center">형성평가</th><th align="center">포트폴리오</th><th align="center">서술형</th><th align="center">B/A 성찰</th></tr></thead><tbody><tr><td>1</td><td>기계가 생각할 수 있는가?</td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center"></td><td align="center">O (Before)</td><td align="center"></td><td align="center">Before</td></tr><tr><td>2</td><td>퍼셉트론과 XOR</td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center"></td></tr><tr><td>3</td><td>활성화함수의 발견</td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center"></td></tr><tr><td>4</td><td>손실함수 — 잘 학습됐다는 것</td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center"></td></tr><tr><td>5</td><td>경사하강법 — 오차 줄이기</td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center"></td></tr><tr><td>6</td><td>역전파 — 자동화</td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center"></td></tr><tr><td>7</td><td>토큰화와 임베딩</td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center"></td></tr><tr><td>8</td><td>ChatGPT 작동 원리</td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center"></td></tr><tr><td>9</td><td>AI 역사 + 진로 탐색</td><td align="center">O</td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center">O</td><td align="center"></td><td align="center">After</td></tr><tr><td>10</td><td>AI의 한계 실험</td><td align="center">O</td><td align="center">O</td><td align="center">O</td><td align="center"></td><td align="center">O</td><td align="center"></td><td align="center">After</td></tr><tr><td>이후</td><td>서술형 평가</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">O</td><td align="center"></td></tr><tr><td><strong>배점</strong></td><td></td><td align="center"><strong>20점</strong></td><td align="center">(참고)</td><td align="center"><strong>10점</strong></td><td align="center"><strong>10점</strong></td><td align="center"><strong>10점</strong></td><td align="center"><strong>40점</strong></td><td align="center"><strong>10점</strong></td></tr></tbody></table> </div> <footer class="sl-flex astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links print:hidden astro-u2l5gyhi" dir="ltr"> <a href="/ai-basic-textbook-teacher/lessons/part5/lesson-10/" rel="prev" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg> <span class="astro-u2l5gyhi"> 이전 페이지 <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">10차시: 같은 질문, 다른 깊이</span> </span> </a> <a href="/ai-basic-textbook-teacher/appendix/rubric/" rel="next" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> <span class="astro-u2l5gyhi"> 다음 페이지 <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">평가 루브릭</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>
