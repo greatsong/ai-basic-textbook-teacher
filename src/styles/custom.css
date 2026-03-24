@@ -1,6 +1,7 @@
 /* ===================================================
    AI 기초 지도서 — 교사용 디자인 시스템
-   Deep Indigo Theme (ai-physical-computing-teacher 기반)
+   Emerald Teacher Theme
+   학생용(Neural Blue)과 구분되는 에메랄드 그린 테마
    =================================================== */
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
@@ -8,9 +9,9 @@
 
 /* ── Starlight 테마 오버라이드 ── */
 :root {
-  --sl-color-accent-low: #1e1b4b;
-  --sl-color-accent: #4F46E5;
-  --sl-color-accent-high: #a5b4fc;
+  --sl-color-accent-low: #064e3b;
+  --sl-color-accent: #059669;
+  --sl-color-accent-high: #6ee7b7;
 
   --sl-font: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   --sl-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -20,10 +21,11 @@
   --sl-text-4xl: 2.5rem;
   --sl-content-width: 52rem;
 
-  /* 지도서 전용 컬러 토큰 */
-  --teacher-indigo: #4F46E5;
-  --teacher-indigo-light: #a5b4fc;
-  --teacher-indigo-bg: rgba(79, 70, 229, 0.08);
+  /* 지도서 전용 컬러 토큰 — 에메랄드 기반 */
+  --teacher-primary: #059669;
+  --teacher-primary-light: #6ee7b7;
+  --teacher-primary-dark: #047857;
+  --teacher-primary-bg: rgba(5, 150, 105, 0.08);
   --teacher-rose: #F43F5E;
   --teacher-rose-light: #fda4af;
   --teacher-rose-bg: rgba(244, 63, 94, 0.08);
@@ -31,20 +33,51 @@
   --teacher-amber-light: #fcd34d;
   --teacher-amber-bg: rgba(245, 158, 11, 0.08);
   --teacher-slate: #64748b;
+  --teacher-indigo: #6366f1;
+  --teacher-indigo-bg: rgba(99, 102, 241, 0.08);
+
+  /* 하위호환 — 기존 클래스에서 사용하던 변수 */
   --teacher-emerald: #10b981;
   --teacher-emerald-bg: rgba(16, 185, 129, 0.08);
 }
 
 :root[data-theme='dark'] {
-  --sl-color-accent-low: #1e1b4b;
-  --sl-color-accent: #818cf8;
-  --sl-color-accent-high: #a5b4fc;
+  --sl-color-accent-low: #064e3b;
+  --sl-color-accent: #34d399;
+  --sl-color-accent-high: #6ee7b7;
+}
+
+/* ── "교사 전용" 고정 배너 ── */
+.site-title::after {
+  content: '교사 전용';
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  margin-left: 0.5rem;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* 헤더 하단에 교사 전용 강조선 */
+header.header {
+  border-bottom: 3px solid #059669 !important;
+}
+
+/* 사이드바 상단 교사 전용 표시 */
+.sidebar-pane {
+  border-top: 3px solid #059669;
 }
 
 /* ── 교사 스크립트 박스 ── */
 .teacher-script {
-  border-left: 4px solid var(--teacher-indigo);
-  background: var(--teacher-indigo-bg);
+  border-left: 4px solid var(--teacher-primary);
+  background: var(--teacher-primary-bg);
   padding: 1rem 1.25rem;
   border-radius: 0 0.5rem 0.5rem 0;
   margin: 1rem 0;
@@ -53,7 +86,7 @@
 .teacher-script::before {
   content: '교사';
   display: inline-block;
-  background: var(--teacher-indigo);
+  background: var(--teacher-primary);
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
@@ -162,14 +195,14 @@
   color: white;
 }
 
-.time-block .intro { background: var(--teacher-indigo); display: flex; align-items: center; justify-content: center; padding: 0 0.5rem; }
+.time-block .intro { background: var(--teacher-primary); display: flex; align-items: center; justify-content: center; padding: 0 0.5rem; }
 .time-block .main { background: var(--teacher-rose); display: flex; align-items: center; justify-content: center; padding: 0 0.5rem; }
 .time-block .wrap-up { background: var(--teacher-amber); display: flex; align-items: center; justify-content: center; padding: 0 0.5rem; }
 
 /* ── 순회 지도 포인트 ── */
 .patrol-point {
-  border-left: 4px solid var(--teacher-emerald);
-  background: var(--teacher-emerald-bg);
+  border-left: 4px solid var(--teacher-indigo);
+  background: var(--teacher-indigo-bg);
   padding: 1rem 1.25rem;
   border-radius: 0 0.5rem 0.5rem 0;
   margin: 1rem 0;
@@ -178,7 +211,7 @@
 .patrol-point::before {
   content: '순회 지도';
   display: inline-block;
-  background: var(--teacher-emerald);
+  background: var(--teacher-indigo);
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
@@ -190,14 +223,14 @@
 
 /* ── 수업 개요 카드 ── */
 .lesson-overview {
-  background: linear-gradient(135deg, var(--teacher-indigo-bg), var(--teacher-rose-bg));
-  border: 1px solid rgba(79, 70, 229, 0.2);
+  background: linear-gradient(135deg, var(--teacher-primary-bg), rgba(99, 102, 241, 0.06));
+  border: 1px solid rgba(5, 150, 105, 0.25);
   border-radius: 0.75rem;
   padding: 1.5rem;
   margin: 1.5rem 0;
 }
 
-.lesson-overview h4 { margin: 0 0 0.75rem 0; color: var(--teacher-indigo); }
+.lesson-overview h4 { margin: 0 0 0.75rem 0; color: var(--teacher-primary-dark); }
 
 .lesson-overview .meta-grid {
   display: grid;
@@ -216,8 +249,8 @@
 
 /* ── 준비물 체크리스트 ── */
 .prep-checklist {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.04), rgba(79, 70, 229, 0.08));
-  border: 1px solid rgba(79, 70, 229, 0.2);
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.04), rgba(5, 150, 105, 0.08));
+  border: 1px solid rgba(5, 150, 105, 0.25);
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
   margin: 1rem 0;
@@ -226,7 +259,7 @@
 .prep-checklist::before {
   content: 'CHECKLIST';
   display: inline-block;
-  background: var(--teacher-indigo);
+  background: var(--teacher-primary);
   color: white;
   font-size: 0.65rem;
   font-weight: 700;
@@ -239,12 +272,12 @@
 .prep-checklist h5 {
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--teacher-indigo);
+  color: var(--teacher-primary-dark);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0.75rem 0 0.35rem;
   padding-bottom: 0.25rem;
-  border-bottom: 1px solid rgba(79, 70, 229, 0.12);
+  border-bottom: 1px solid rgba(5, 150, 105, 0.15);
 }
 
 .prep-checklist h5:first-of-type { margin-top: 0.25rem; }
@@ -263,7 +296,7 @@
   top: 0.45rem;
   width: 1.1rem;
   height: 1.1rem;
-  border: 2px solid var(--teacher-indigo);
+  border: 2px solid var(--teacher-primary);
   border-radius: 0.25rem;
   background: white;
 }
@@ -315,7 +348,7 @@
   justify-content: center;
   width: 1.75rem;
   height: 1.75rem;
-  background: var(--teacher-indigo);
+  background: var(--teacher-primary);
   color: white;
   border-radius: 50%;
   font-size: 0.8rem;
@@ -338,15 +371,15 @@
 
 /* ── 평가 루브릭 테이블 ── */
 .rubric-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; }
-.rubric-table th { background: var(--teacher-indigo); color: white; padding: 0.5rem 0.75rem; text-align: left; font-weight: 600; }
-.rubric-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(79, 70, 229, 0.15); vertical-align: top; }
-.rubric-table tr:hover td { background: var(--teacher-indigo-bg); }
+.rubric-table th { background: var(--teacher-primary); color: white; padding: 0.5rem 0.75rem; text-align: left; font-weight: 600; }
+.rubric-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(5, 150, 105, 0.15); vertical-align: top; }
+.rubric-table tr:hover td { background: var(--teacher-primary-bg); }
 
 /* ── 차별화 전략 ── */
 .differentiation { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
 
 .differentiation .fast-learner {
-  border: 1px solid rgba(79, 70, 229, 0.3);
+  border: 1px solid rgba(5, 150, 105, 0.3);
   border-radius: 0.5rem;
   padding: 1rem;
 }
@@ -354,7 +387,7 @@
 .differentiation .fast-learner::before {
   content: '빠른 학생';
   display: inline-block;
-  background: var(--teacher-indigo);
+  background: var(--teacher-primary);
   color: white;
   font-size: 0.65rem;
   font-weight: 700;
@@ -383,7 +416,8 @@
 
 /* ── 뱃지 ── */
 .badge { display: inline-flex; align-items: center; padding: 0.125rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
-.badge-indigo { background: rgba(79, 70, 229, 0.15); color: var(--teacher-indigo); }
+.badge-primary { background: rgba(5, 150, 105, 0.15); color: var(--teacher-primary-dark); }
+.badge-indigo { background: rgba(99, 102, 241, 0.15); color: var(--teacher-indigo); }
 .badge-rose { background: rgba(244, 63, 94, 0.15); color: var(--teacher-rose); }
 .badge-amber { background: rgba(245, 158, 11, 0.15); color: #b45309; }
 .badge-emerald { background: rgba(16, 185, 129, 0.15); color: #047857; }
@@ -459,6 +493,7 @@
 :root[data-theme='dark'] .trouble-card { background: rgba(244, 63, 94, 0.06); }
 :root[data-theme='dark'] .student-link .link-title { color: #e2e8f0; }
 :root[data-theme='dark'] .student-content summary { color: #60a5fa; }
+:root[data-theme='dark'] .site-title::after { background: linear-gradient(135deg, #059669, #047857); }
 
 /* ── 모바일 반응형 ── */
 .sl-markdown-content table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }

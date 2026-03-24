@@ -9,26 +9,59 @@ hero:
       link: /ai-basic-textbook-teacher/guide/how-to-use/
       icon: right-arrow
       variant: primary
-    - text: 1차시 시작
+    - text: 1차시부터 시작
       link: /ai-basic-textbook-teacher/lessons/part1/lesson-01/
       icon: open-book
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<div style="background: linear-gradient(135deg, rgba(5,150,105,0.1), rgba(5,150,105,0.05)); border: 1px solid rgba(5,150,105,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 2rem; text-align: center;">
+  <span style="background: linear-gradient(135deg, #059669, #047857); color: white; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 9999px; letter-spacing: 0.08em;">교사 전용</span>
+  <span style="font-size: 0.85rem; margin-left: 0.5rem; color: #334155;">이 사이트는 교사용 지도서입니다. 학생용 교재는 <a href="https://greatsong.github.io/ai-basic-textbook/" style="color: #059669; font-weight: 600;">여기</a>에서 확인하세요.</span>
+</div>
+
+## 이 지도서의 특징
+
+<CardGrid>
+  <Card title="수업 흐름 안내" icon="right-caret">
+    각 차시별 도입-전개-정리의 상세한 수업 흐름과 시간 배분을 제공합니다.
+  </Card>
+  <Card title="교사 멘트 스크립트" icon="pencil">
+    핵심 질문과 발문, 학생 참여를 유도하는 교사 멘트를 예시합니다.
+  </Card>
+  <Card title="학생 예상 반응" icon="comment">
+    학생들이 보일 수 있는 다양한 반응과 오개념, 대응 전략을 안내합니다.
+  </Card>
+  <Card title="트러블슈팅 가이드" icon="warning">
+    수업 중 발생할 수 있는 기술적 문제와 해결 방법을 정리했습니다.
+  </Card>
+</CardGrid>
 
 ## 차시별 지도서
 
 <CardGrid>
-  <Card title="AI의 시작 (1-2차시)" icon="rocket">
+  <Card title="Part 1 — AI의 시작 (1-2차시)" icon="rocket">
     튜링 테스트 실험 진행, 퍼셉트론 시뮬레이터 활용 가이드
   </Card>
-  <Card title="신경망의 비밀 (3-4차시)" icon="puzzle">
+  <Card title="Part 2 — 신경망의 비밀 (3-4차시)" icon="puzzle">
     활성화함수 실험, 손실함수 대결 운영 방법
   </Card>
-  <Card title="학습의 원리 (5-6차시)" icon="setting">
+  <Card title="Part 3 — 학습의 원리 (5-6차시)" icon="setting">
     3D 레이싱 게임 운영, 역전파 워크스루 진행법
   </Card>
-  <Card title="언어를 이해하는 AI (7-8차시)" icon="document">
+  <Card title="Part 4 — 언어를 이해하는 AI (7-8차시)" icon="document">
     토큰화 데모, 임베딩 갤럭시, 다음 단어 예측 활동
   </Card>
+  <Card title="Part 5 — 확장 모듈 (9-10차시)" icon="star">
+    AI 연구사 타임라인, AI 한계 실험, 최종 성찰 활동
+  </Card>
+</CardGrid>
+
+## 부록 자료
+
+<CardGrid stagger>
+  <LinkCard title="평가 루브릭" href="/ai-basic-textbook-teacher/appendix/rubric/" description="차시별 평가 기준과 채점 기준표" />
+  <LinkCard title="예시 답안" href="/ai-basic-textbook-teacher/appendix/sample-answers/" description="서술형 문항 모범 답안 및 채점 가이드" />
+  <LinkCard title="학생 관찰 기록" href="/ai-basic-textbook-teacher/appendix/observation/" description="수업 중 학생 관찰 기록 양식" />
 </CardGrid>
